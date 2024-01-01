@@ -12,11 +12,11 @@ export default async function Hero() {
         src={profile.bannerVideo}
       ></video>
       <div
-        className=" flex h-full flex-col  items-start justify-end 
+        className=" flex h-full flex-col  items-center justify-center 
       px-8 pb-20 md:w-1/2 "
       >
-        <h1 className="mb-6 text-6xl text-[#F8FAFC]">{profile.name}</h1>
-        <h2 className="text-md text-[#F8FAFC]">{profile.description}</h2>
+        <h1 className="mb-6 text-6xl text-[#F8FAFC]">Hello</h1>
+        <h2 className="text-md text-[#F8FAFC] text-center">{profile.description}</h2>
         <Link
           href={profile.pdf}
           target="_blank"
