@@ -342,8 +342,6 @@ export const projects = [
   //   github: 'https://github.com/llucasgomes/API-OpenAI-ElysiaJS',
   //   page: 'https://marilza-cakes.vercel.app/',
   // },
- 
-  
 ]
 
 export const courses = [
@@ -384,6 +382,10 @@ export const comments = [
     traduzir designs em códigos elegantes e funcionais. Ele possui ótimos
     conhecimentos em frameworks modernos como ReactJS, e sempre busca
     aprender novas tecnologias para se manter atualizado.`,
+    linkedin: {
+      link: 'https://www.linkedin.com/in/ghalba-vieira/',
+      title: 'ghalba-vieira',
+    },
   },
   {
     id: '02',
@@ -396,6 +398,10 @@ export const comments = [
     ele tem me orientado desde a construção até o término de uma aplicação executado em: 
     Angular, react e Vue. Com o seu auxílio, tens proporcionado aprendizados essenciais 
     para comigo. `,
+    linkedin: {
+      link: 'https://www.linkedin.com/in/maiarasantos25/',
+      title: 'maiarasantos25',
+    },
   },
   {
     id: '03',
@@ -407,6 +413,10 @@ export const comments = [
       com empatia fazendo sempre as entregas além do esperado.
     Apresenta constante evolução, desenvolvendo projetos e está em permanente 
     aprendizado aqui no curso.É muito gratificante tê-lo em nosso time de Monitores/Alunos.`,
+    linkedin: {
+      link: 'https://www.linkedin.com/in/santana-isa/',
+      title: 'santana-isa',
+    },
   },
   {
     id: '04',
@@ -414,6 +424,10 @@ export const comments = [
     stack: 'Mentora | Marketing e Vendas Estratégicas',
     image: 'vivi.jpeg',
     comment: `O Lucas tem muito conhecimento e tem arrasado no Front-End.`,
+    linkedin: {
+      link: 'https://www.linkedin.com/in/viviane-fernandes-a08074117/',
+      title: 'viviane-fernandes-a08074117',
+    },
   },
   {
     id: '05',
@@ -421,6 +435,10 @@ export const comments = [
     stack: 'Software Engineer.',
     image: 'gabriel.jpeg',
     comment: `Ótimo profissional, busca sempre estar em evolução e escrever soluções excelentes!`,
+    linkedin: {
+      link: 'https://www.linkedin.com/in/gabriellennon/',
+      title: 'gabriellennon',
+    },
   },
   {
     id: '06',
@@ -432,5 +450,9 @@ export const comments = [
     capacidade de transformar conceitos criativos em produtos funcionais e visualmente agradáveis.
     Além disso, ele é  motivado e, certamente, continuará crescendo e 
     se destacando na área de desenvolvimento.`,
+    linkedin: {
+      link: 'https://www.linkedin.com/in/maurilio-benevento/',
+      title: 'maurilio-benevento',
+    },
   },
 ]
