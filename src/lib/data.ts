@@ -332,6 +332,16 @@ export const projects = [
     github: 'https://github.com/llucasgomes/API-OpenAI-ElysiaJS',
     page: '',
   },
+  {
+    id: '16',
+    name: 'Scraping Process TJGO',
+    description: 'Desenvolvendo uma forma de coletar dados de um processo',
+    image: '',
+    stack: 'back',
+    tecnologies: ['Nextjs', 'Typescript'],
+    github: 'https://github.com/llucasgomes/api-scraping',
+    page: '',
+  },
   // {
   //   id: '15',
   //   name: 'Marilza Cakes',
