@@ -22,6 +22,7 @@ export default function Header() {
         </ul>
       </nav> */}
         <ButtonMenu />
+        <h2>ola mundo</h2>
         <MenuMobile />
       {/* <div className="block md:hidden">
       </div> */}

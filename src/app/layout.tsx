@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer'
-import HeaderTeste from '@/components/HeaderTeste'
+import Header from '@/components/Header'
 import { ThemeProvider } from '@/providers/ThemeProvider'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -27,7 +27,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <HeaderTeste />
+          <Header />
           {children}
           <Footer />
         </ThemeProvider>
