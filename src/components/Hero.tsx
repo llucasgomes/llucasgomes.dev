@@ -16,7 +16,8 @@ export default async function Hero() {
       px-8 pb-20 "
       >
         <h1 className="mb-6 text-6xl text-[#F8FAFC]">Hello</h1>
-        <h2 className="text-md text-[#F8FAFC] text-center">{profile.description}</h2>
+        <h2 className="text-md text-[#F8FAFC] text-center max-w-2xl
+         sm:mb-10 sm:text-xl">{profile.description}</h2>
         <Link
           href={profile.pdf}
           target="_blank"
