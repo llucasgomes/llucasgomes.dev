@@ -4,7 +4,7 @@ import ButtonMenu from './ButtonMenu'
 export default function Header() {
   return (
     <header className="flex h-20 w-full  items-center justify-around bg-black">
-      <h1 className='text-2xl font-bold'>Lucas Gomes</h1>
+      <h1 className="text-2xl font-bold">Lucas Gomes</h1>
       <nav className="hidden md:block">
         <ul className="flex w-full list-none gap-5">
           <Link href={'/'} className="cursor-pointer text-white">
@@ -21,10 +21,9 @@ export default function Header() {
           </Link>
         </ul>
       </nav>
-        <div className='md:hidden'>
+      <div className="md:hidden">
         <ButtonMenu />
-        </div>
-   
+      </div>
     </header>
   )
 }

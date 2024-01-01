@@ -201,6 +201,6 @@ export {
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
+  // eslint-disable-next-line prettier/prettier
   DropdownMenuTrigger
 }
-

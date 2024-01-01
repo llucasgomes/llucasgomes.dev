@@ -9,7 +9,9 @@ import {
 
 export default async function HistoryDev() {
   return (
-    <section className={`w-full  items-start justify-center  pb-14 px-5 text-[#F8F9FA]`}>
+    <section
+      className={`w-full  items-start justify-center  px-5 pb-14 text-[#F8F9FA]`}
+    >
       <Card className="w-full">
         <CardHeader>
           <CardTitle>Experience</CardTitle>

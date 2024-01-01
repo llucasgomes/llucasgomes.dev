@@ -254,6 +254,6 @@ export {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  // eslint-disable-next-line prettier/prettier
   type CarouselApi
 }
-
