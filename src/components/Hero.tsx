@@ -27,19 +27,7 @@ export default async function Hero() {
           Hire Me
         </Link>
       </div>
-      {/* <div
-        className=" flex h-full flex-col items-center  justify-center px-8 
-      pb-20 md:w-1/2 "
-      >
-        <Image
-          // src={`data:image/webp;base64,${image}`}
-          src={'/assets/perfil.webp'}
-          width={500}
-          height={700}
-          alt="Imagem de perfil"
-          className=" mb-4 md:mb-0 md:w-2/3"
-        />
-      </div> */}
+   
     </section>
   )
 }
