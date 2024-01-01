@@ -5,7 +5,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
 export default function Projects() {
   const projectBack = projects.filter((project) => project.stack === 'back')
   const projectFront = projects.filter((project) => project.stack === 'front')
-  const projectFullStack = projects.filter((project) => project.stack === 'fullstack')
+  const projectFullStack = projects.filter(
+    (project) => project.stack === 'fullstack',
+  )
 
   return (
     <section className=" flex w-full flex-col items-center justify-start  pb-14">
@@ -14,8 +16,11 @@ export default function Projects() {
         Projetos realizados durante minha evolução como Desenvolvedor Jr
       </h2>
 
-      <div className="flex  w-full max-w-5xl flex-wrap justify-center  px-5">
-        <Tabs defaultValue="all" className="w-full max-w-5xl">
+      <div
+        className="flex  w-full max-w-5xl flex-wrap justify-center  px-5
+      lg:max-w-7xl"
+      >
+        <Tabs defaultValue="all" className="w-full  ">
           <TabsList className="flex w-full items-center justify-center">
             <TabsTrigger value="all">All</TabsTrigger>
             <TabsTrigger value="front">Front-End</TabsTrigger>
@@ -24,7 +29,8 @@ export default function Projects() {
           </TabsList>
           <TabsContent
             value="all"
-            className="flex  w-full max-w-5xl flex-wrap justify-center gap-6"
+            className="flex  w-full max-w-5xl flex-wrap justify-center gap-6
+            lg:max-w-7xl"
           >
             {projects.map((project) => {
               return <CardProject key={project.id} project={project} />
@@ -32,7 +38,8 @@ export default function Projects() {
           </TabsContent>
           <TabsContent
             value="front"
-            className="flex  w-full max-w-5xl flex-wrap justify-center gap-6"
+            className="flex  w-full max-w-5xl flex-wrap justify-center gap-6
+            lg:max-w-7xl"
           >
             {projectFront.map((project) => {
               return <CardProject key={project.id} project={project} />
@@ -40,7 +47,8 @@ export default function Projects() {
           </TabsContent>
           <TabsContent
             value="fullstack"
-            className="flex  w-full max-w-5xl flex-wrap justify-center gap-6"
+            className="flex  w-full max-w-5xl flex-wrap justify-center gap-6
+            lg:max-w-7xl"
           >
             {projectFullStack.map((project) => {
               return <CardProject key={project.id} project={project} />
