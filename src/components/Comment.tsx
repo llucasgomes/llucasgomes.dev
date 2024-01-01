@@ -31,9 +31,9 @@ type CommentsProps = {
 
 export default function Comment() {
   return (
-    <section className="flex w-full  flex-col items-center justify-start  pb-14">
+    <section className="flex w-full  flex-col items-center justify-start  py-14">
       <h1 className="mb-5 text-3xl">Depoimentos</h1>
-      <div className="flex w-full max-w-6xl items-center justify-center py-5 bg-red-500">
+      <div className="flex w-full max-w-6xl items-center justify-center py-5 ">
         <Carousel orientation="horizontal" className="w-full ">
           <CarouselContent>
             {comments.map((comment, index) => {
