@@ -40,7 +40,7 @@ export default function Comment() {
       <h1 className="mb-5 text-3xl">Depoimentos</h1>
       <div
         className="flex w-full max-w-6xl  items-center justify-center py-5 
-      md:max-h-[500px] md:py-3 "
+      sm:max-h-[500px] sm:py-3 lg:max-w-[600px]"
       >
         <Carousel orientation="horizontal" className="h-auto w-full">
           <CarouselContent>
