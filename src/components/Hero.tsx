@@ -12,12 +12,16 @@ export default async function Hero() {
         src={profile.bannerVideo}
       ></video>
       <div
-        className=" flex w-full h-full flex-col  items-center justify-center 
+        className=" flex h-full w-full flex-col  items-center justify-center 
       px-8 pb-20 "
       >
         <h1 className="mb-6 text-6xl text-[#F8FAFC]">Hello</h1>
-        <h2 className="text-md text-[#F8FAFC] text-center max-w-2xl
-         sm:mb-10 sm:text-xl">{profile.description}</h2>
+        <h2
+          className="text-md max-w-2xl text-center text-[#F8FAFC]
+         sm:mb-10 sm:text-xl"
+        >
+          {profile.description}
+        </h2>
         <Link
           href={profile.pdf}
           target="_blank"
@@ -28,7 +32,6 @@ export default async function Hero() {
           Hire Me
         </Link>
       </div>
-   
     </section>
   )
 }
