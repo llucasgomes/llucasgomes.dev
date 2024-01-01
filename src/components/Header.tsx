@@ -21,7 +21,7 @@ export default function Header() {
           </Link>
         </ul>
       </nav>
-      <div className="  block md:hidden">
+      <div className="absolute right-0 z-50  block md:hidden">
         <ButtonMenu />
       </div>
     </header>
