@@ -1,8 +1,9 @@
 'use client'
 
 import { comments } from '@/lib/data'
+import { LinkedinIcon } from 'lucide-react'
+import Link from 'next/link'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
-import { Button } from './ui/button'
 import {
   Card,
   CardContent,
@@ -26,6 +27,10 @@ type CommentsProps = {
     stack: string
     image: string
     comment: string
+    linkedin: {
+      link: string
+      title: string
+    }
   }
 }
 
@@ -33,9 +38,11 @@ export default function Comment() {
   return (
     <section className="flex w-full  flex-col items-center justify-center  pt-14">
       <h1 className="mb-5 text-3xl">Depoimentos</h1>
-      <div className="flex w-full max-w-6xl  items-center justify-center py-5 
-      md:max-h-[500px] md:py-3 ">
-        <Carousel orientation="horizontal" className="w-full h-auto">
+      <div
+        className="flex w-full max-w-6xl  items-center justify-center py-5 
+      md:max-h-[500px] md:py-3 "
+      >
+        <Carousel orientation="horizontal" className="h-auto w-full">
           <CarouselContent>
             {comments.map((comment, index) => {
               return (
@@ -48,8 +55,8 @@ export default function Comment() {
               )
             })}
           </CarouselContent>
-          <CarouselPrevious  className='hidden sm:block'/>
-          <CarouselNext className='hidden sm:block'/>
+          <CarouselPrevious className="hidden sm:block" />
+          <CarouselNext className="hidden sm:block" />
         </Carousel>
       </div>
     </section>
@@ -74,8 +81,13 @@ const Comentario = ({ comment }: CommentsProps) => {
       </CardHeader>
       <CardContent>{comment.comment}</CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline">Cancel</Button>
-        <Button>Deploy</Button>
+        {/* <Button variant="outline">Cancel</Button> */}
+        <Link href={comment.linkedin.link} target="_blank">
+          <CardDescription className="flex items-center justify-center gap-3">
+            <LinkedinIcon size={20} />
+            {`/${comment.linkedin.title}`}
+          </CardDescription>
+        </Link>
       </CardFooter>
     </Card>
   )
