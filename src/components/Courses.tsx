@@ -9,7 +9,7 @@ import {
 
 export default async function Courses() {
   return (
-    <section className={`items-start  justify-center pb-14  text-[#F8F9FA]`}>
+    <section className={`w-full px-5 items-start  justify-center pb-14  text-[#F8F9FA]`}>
       <Card className="w-full">
         <CardHeader>
           <CardTitle>Cursos</CardTitle>
