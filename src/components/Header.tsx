@@ -3,7 +3,7 @@ import ButtonMenu from './ButtonMenu'
 
 export default function Header() {
   return (
-    <header className="fixed top-0 flex h-20 w-full  items-center justify-around bg-black">
+    <header className="flex h-20 w-full  items-center justify-around bg-black">
       <h1 className='text-2xl font-bold'>Lucas Gomes</h1>
       <nav className="hidden md:block">
         <ul className="flex w-full list-none gap-5">
