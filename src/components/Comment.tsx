@@ -31,10 +31,10 @@ type CommentsProps = {
 
 export default function Comment() {
   return (
-    <section className="flex  flex-col items-center justify-start  py-14">
+    <section className="flex w-full  flex-col items-center justify-start  pb-14">
       <h1 className="mb-5 text-3xl">Depoimentos</h1>
-      <div className="flex max-w-6xl flex-wrap items-center justify-center">
-        <Carousel orientation="horizontal" className="w-5/12">
+      <div className="flex w-full max-w-6xl items-center justify-center py-5 bg-red-500">
+        <Carousel orientation="horizontal" className="w-full ">
           <CarouselContent>
             {comments.map((comment, index) => {
               return (
@@ -57,7 +57,7 @@ export default function Comment() {
 
 const Comentario = ({ comment }: CommentsProps) => {
   return (
-    <Card className="w-[350px]">
+    <Card className="max-w-[350px]">
       <CardHeader className="flex  h-full w-full flex-row items-start justify-start gap-3 ">
         <Avatar>
           <AvatarImage
