@@ -1,7 +1,8 @@
 'use client'
-
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import * as z from 'zod'
 import { Button } from './ui/button'
 import { CardFooter } from './ui/card'
@@ -68,12 +69,44 @@ export default function Formulario() {
   // Defina seu Handler
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
-    const res = await fetch('https://llucasgomes-dev.vercel.app/api/send', {
+    const res = await fetch('http://localhost:3000/api/send', {
       method: 'POST',
       body: JSON.stringify(values),
     })
-    const data = await res.json()
-    console.log(data)
+      .then((res) => {
+        console.log(res)
+        toast.success('Email Enviado com sucesso!', {
+          position: 'top-center',
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+        toast.error('Não foi Enviado!', {
+          position: 'top-center',
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+        })
+      })
+    // const res = await fetch('https://llucasgomes-dev.vercel.app/api/send', {
+    //   method: 'POST',
+    //   body: JSON.stringify(values),
+    // })
+    // const data = await res.json()
+
+    // if (data === 'Enviado') {
+    // }
   }
   return (
     <>
@@ -169,6 +202,18 @@ export default function Formulario() {
           </CardFooter>
         </form>
       </Form>
+      <ToastContainer
+        position="top-center"
+        autoClose={1500}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   )
 }
