@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default async function Hero() {
   return (
-    <section className=" relative  flex h-[calc(100vh+56px)] w-full ">
+    <section className=" relative  flex h-[calc(100vh-56px)] w-full mt-14">
       <video
         autoPlay={true}
         muted={true}
@@ -12,8 +12,8 @@ export default async function Hero() {
         src={profile.bannerVideo}
       ></video>
       <div
-        className=" flex h-full flex-col  items-center justify-center 
-      px-8 pb-20 md:w-1/2 "
+        className=" flex w-full h-full flex-col  items-center justify-center 
+      px-8 pb-20 "
       >
         <h1 className="mb-6 text-6xl text-[#F8FAFC]">Hello</h1>
         <h2 className="text-md text-[#F8FAFC] text-center">{profile.description}</h2>
