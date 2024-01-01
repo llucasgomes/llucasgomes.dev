@@ -1,9 +1,9 @@
 {
   "extends": [
-    // "@rocketseat/eslint-config/next", 
+    "@rocketseat/eslint-config/next", 
     "next/core-web-vitals",
-    "eslint:recommended",
-    "next"
+    // "eslint:recommended",
+    // "next"
 ],"rules": {
   "react/no-unescaped-entities": "off",
   "@next/next/no-page-custom-font": "off"
