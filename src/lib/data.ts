@@ -135,7 +135,7 @@ export const projects = [
     description:
       'Portifilio desenvolvido para treinamento de todas as tecnologias que venho aprendendo ate o momento.',
     image: '/assets/images/projects/portifolio-2.3.png',
-    stack: 'back',
+    stack: 'fullstack',
     tecnologies: ['NextJS', 'Taiwind CSS', 'Typescript', 'MongoDB', 'Prisma'],
     github: '',
     page: 'https://web-lucasgomes-js.vercel.app/',
