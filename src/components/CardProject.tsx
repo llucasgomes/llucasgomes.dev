@@ -1,4 +1,5 @@
 import { PropsProject } from '@/@types'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from './ui/badge'
 import {
@@ -15,14 +16,14 @@ export default function CardProject({ project }: PropsProject) {
     <Card className="flex h-auto w-full  max-w-[390px]  flex-col items-center">
       <CardHeader>
         <CardTitle className="mb-3 text-center">{project.name}</CardTitle>
-        {/* {project.image && (
+        {project.image && (
           <Image
             src={project.image}
             alt={`Imagem ddo projeto ${project.name}`}
             width={300}
             height={200}
           />
-        )} */}
+        )}
       </CardHeader>
       <CardContent className="flex w-full  flex-col items-center justify-center gap-4">
         <CardDescription>{project.description}</CardDescription>
