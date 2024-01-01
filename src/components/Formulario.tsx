@@ -68,6 +68,12 @@ export default function Formulario() {
   // Defina seu Handler
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
+    const res = await fetch('https://llucasgomes-dev.vercel.app/api/send', {
+      method: 'POST',
+      body: JSON.stringify(values),
+    })
+    const data = await res.json()
+    console.log(data)
   }
   return (
     <>
