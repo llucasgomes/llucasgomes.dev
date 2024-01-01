@@ -120,6 +120,16 @@ export const profile = {
 // ]
 export const projects = [
   {
+    id: '16',
+    name: 'Biosante',
+    description: 'Site em que estou dando um upgrade, para fins de aprendizado',
+    image: '/assets/images/projects/biosante.png',
+    stack: 'front',
+    tecnologies: ['NextJS', 'Typescript', 'Tailwind CSS'],
+    github: 'https://github.com/llucasgomes/biosante-upgrade',
+    page: 'https://biosante-upgrade.vercel.app/',
+  },
+  {
     id: '01',
     name: 'Portifolio 2.3',
     description:
@@ -236,7 +246,7 @@ export const projects = [
     name: 'Desafio Stack X - VueJS',
     description:
       'Este é um dos 3  Desafio da Stack X elaborado pelo Mentor do modulo de WEB 3 Gabriel , onde era preciso desenvolver Lading Page Simples ,utilizando VueJs com TailwindCSS ,e enviar eventos pelos botões para trocar cada states (idioma).',
-    image: '/assets/images/projects/desafiostack.png',
+    image: '/assets/images/projects/desafio-stackx-vue.png',
     stack: 'front',
     tecnologies: ['Vite', 'Html5', 'CSS3', 'Javascript', 'Vue', 'Taiwind CSS'],
     github: 'https://github.com/llucasgomes/Desafio-StackX-Web3-Vue',
@@ -247,7 +257,7 @@ export const projects = [
     name: 'Desafio Stack X - ReacJS',
     description:
       'Este é um Desafio da Stack X elaborado pelo Mentor do modulo de WEB 3 Gabriel , onde era preciso desenvolver Lading Page Simples ,utilizando ReactJS + Styled Components com TypeScript ,e enviar eventos pelos botões para trocar cada states (idioma).',
-    image: '/assets/images/projects/desafiostack.png',
+    image: '/assets/images/projects/desafio-stackx-reactjs.png',
     stack: 'front',
     tecnologies: [
       'Vite',
@@ -265,7 +275,7 @@ export const projects = [
     name: 'Desafio Stack X - Angular',
     description:
       'Este é um dos Desafio da Stack X elaborado pelo Mentor do modulo de WEB 3 Gabriel , onde era preciso desenvolver Lading Page Simples ,utilizando Angular + SASS com TypeScript.',
-    image: '/assets/images/projects/desafiostack.png',
+    image: '/assets/images/projects/desafio-stackx-angular.png',
     stack: 'front',
     tecnologies: [
       'Angular CLI',
@@ -322,26 +332,18 @@ export const projects = [
     github: 'https://github.com/llucasgomes/API-OpenAI-ElysiaJS',
     page: '',
   },
-  {
-    id: '15',
-    name: 'Marilza Cakes',
-    description: 'Projeto em desenvolvimento para fins de aprendizado',
-    image: '/assets/images/projects/marilzacakes.png',
-    stack: 'front',
-    tecnologies: ['NextJS', 'Typescript', 'Tailwind CSS'],
-    github: 'https://github.com/llucasgomes/API-OpenAI-ElysiaJS',
-    page: 'https://marilza-cakes.vercel.app/',
-  },
-  {
-    id: '16',
-    name: 'Biosante',
-    description: 'Site em que estou dando um upgrade, para fins de aprendizado',
-    image: '/assets/images/projects/biosante.png',
-    stack: 'front',
-    tecnologies: ['NextJS', 'Typescript', 'Tailwind CSS'],
-    github: 'https://github.com/llucasgomes/biosante-upgrade',
-    page: 'https://biosante-upgrade.vercel.app/',
-  },
+  // {
+  //   id: '15',
+  //   name: 'Marilza Cakes',
+  //   description: 'Projeto em desenvolvimento para fins de aprendizado',
+  //   image: '/assets/images/projects/marilzacakes.png',
+  //   stack: 'front',
+  //   tecnologies: ['NextJS', 'Typescript', 'Tailwind CSS'],
+  //   github: 'https://github.com/llucasgomes/API-OpenAI-ElysiaJS',
+  //   page: 'https://marilza-cakes.vercel.app/',
+  // },
+ 
+  
 ]
 
 export const courses = [
