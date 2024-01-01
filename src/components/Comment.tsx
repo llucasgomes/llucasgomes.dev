@@ -47,8 +47,8 @@ export default function Comment() {
               )
             })}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious  className='hidden'/>
+          <CarouselNext className='hidden'/>
         </Carousel>
       </div>
     </section>
