@@ -14,7 +14,7 @@ export default function Home() {
       <Separator/>
       <Comment />
       <Separator/>
-      <div className="flex w-full  flex-col gap-7 pt-14 
+      <div className="flex w-full  flex-col gap-7 pt-14
        md:flex-row">
         <HistoryDev />
         <Courses />
