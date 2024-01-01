@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default async function Hero() {
   return (
-    <section className=" relative  flex h-[calc(100vh-56px)] w-full mt-14">
+    <section className="relative  flex h-[calc(100vh-56px)] w-full mt-14">
       <video
         autoPlay={true}
         muted={true}
