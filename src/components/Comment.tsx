@@ -31,10 +31,11 @@ type CommentsProps = {
 
 export default function Comment() {
   return (
-    <section className="flex w-full  flex-col items-center justify-start  py-14">
+    <section className="flex w-full  flex-col items-center justify-center  pt-14">
       <h1 className="mb-5 text-3xl">Depoimentos</h1>
-      <div className="flex w-full max-w-6xl items-center justify-center py-5 ">
-        <Carousel orientation="horizontal" className="w-full ">
+      <div className="flex w-full max-w-6xl  items-center justify-center py-5 
+      md:max-h-[500px] md:py-3 ">
+        <Carousel orientation="horizontal" className="w-full h-auto">
           <CarouselContent>
             {comments.map((comment, index) => {
               return (
@@ -47,8 +48,8 @@ export default function Comment() {
               )
             })}
           </CarouselContent>
-          <CarouselPrevious  className='hidden'/>
-          <CarouselNext className='hidden'/>
+          <CarouselPrevious  className='hidden sm:block'/>
+          <CarouselNext className='hidden sm:block'/>
         </Carousel>
       </div>
     </section>
