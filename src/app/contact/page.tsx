@@ -1,3 +1,4 @@
+import CardMap from '@/components/CardMap'
 import Formulario from '@/components/Formulario'
 import {
   Card,
@@ -30,7 +31,7 @@ export default function page() {
           </Card>
         </div>
 
-        {/* <div className="flex h-full w-full flex-col items-center justify-center md:w-1/2 ">
+        <div className="flex h-full w-full flex-col items-center justify-center md:w-1/2 ">
           <Card className="w-full ">
             <CardHeader>
               <CardTitle>Localização</CardTitle>
@@ -42,7 +43,7 @@ export default function page() {
               <CardMap />
             </CardContent>
           </Card>
-        </div> */}
+        </div>
       </section>
     </main>
   )
