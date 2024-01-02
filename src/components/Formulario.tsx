@@ -16,19 +16,9 @@ import {
 } from './ui/form'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from './ui/select'
 import { Textarea } from './ui/textarea'
 
 const formSchema = z.object({
-  typeComunication: z.string().min(2, {
-    message: 'Obrigatorio Selecionar um..',
-  }),
   email: z
     .string()
     .email({
@@ -59,7 +49,6 @@ export default function Formulario() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      typeComunication: '',
       email: '',
       name: '',
       message: '',
@@ -69,7 +58,8 @@ export default function Formulario() {
   // Defina seu Handler
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
-    const res = await fetch('http://localhost:3000/api/send', {
+
+    await fetch('https://llucasgomes-dev.vercel.app/api/send', {
       method: 'POST',
       body: JSON.stringify(values),
     })
@@ -85,6 +75,7 @@ export default function Formulario() {
           progress: undefined,
           theme: 'dark',
         })
+        form.reset()
       })
       .catch((err) => {
         console.log(err)
@@ -99,21 +90,13 @@ export default function Formulario() {
           theme: 'dark',
         })
       })
-    // const res = await fetch('https://llucasgomes-dev.vercel.app/api/send', {
-    //   method: 'POST',
-    //   body: JSON.stringify(values),
-    // })
-    // const data = await res.json()
-
-    // if (data === 'Enviado') {
-    // }
   }
   return (
     <>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
+            {/* <div className="flex flex-col space-y-1.5">
               <Label htmlFor="messenger">Mensageiro</Label>
               <FormField
                 control={form.control}
@@ -135,7 +118,7 @@ export default function Formulario() {
                   </FormItem>
                 )}
               />
-            </div>
+            </div> */}
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="email">Email</Label>
               <FormField
