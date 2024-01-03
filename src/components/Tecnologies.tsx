@@ -18,7 +18,7 @@ export default function Tecnologies() {
               <CardTitle>{name}</CardTitle>
             </CardHeader>
             <CardContent className="flex  w-full items-center justify-center">
-              <Avatar className="  rounded-none">
+              <Avatar className="  branco rounded-none">
                 <AvatarImage src={image} />
                 <AvatarFallback>NX</AvatarFallback>
               </Avatar>

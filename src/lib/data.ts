@@ -48,7 +48,7 @@ export const skills = [
 
 export const profile = {
   name: 'Lucas Gomes',
-  bannerVideo: '/assets/videos/video.mp4',
+  bannerVideo: '/assets/videos/video2.webm',
   description: `Desenvolvedor front-end altamente motivado e apaixonado por criar
   interfaces de usuário atraentes e interativas. Estou no momento em
   transição de carreira.Tenho conhecimento em linguagens como HTML, CSS
