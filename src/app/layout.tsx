@@ -18,16 +18,15 @@ export const metadata: Metadata = {
     description:
       'Bem-vindo ao meu espaço digital! Este é o meu portfólio, onde compartilho projetos apaixonantes enquanto embarco na jornada de crescimento como Desenvolvedor Júnior. Explore meu código, descubra minhas habilidades e acompanhe minha evolução nesse mundo fascinante da programação.',
     siteName: 'Lucas Gomes',
-    images: [
-      {
-        url: '/assets/images/projects/portflio-oficial.png',
-        width: 1800,
-        height: 1800,
-        alt: 'Apresentacao do Site',
-      },
-    ],
+    url: 'llucasgomes-dev.vercel.app',
+    images: ['/assets/images/projects/portflio-oficial.png'],
     type: 'website',
     locale: 'pt-BR',
+  },
+  twitter: {
+    images: ['/assets/images/projects/portflio-oficial.png'],
+    description:
+      'Bem-vindo ao meu espaço digital! Este é o meu portfólio, onde compartilho projetos apaixonantes enquanto embarco na jornada de crescimento como Desenvolvedor Júnior. Explore meu código, descubra minhas habilidades e acompanhe minha evolução nesse mundo fascinante da programação.',
   },
 }
 
