@@ -1,4 +1,3 @@
-import CardProject from '../_components/CardProject'
 import {
   Tabs,
   TabsContent,
@@ -6,6 +5,7 @@ import {
   TabsTrigger,
 } from '../_components/ui/tabs'
 import { projects } from '../_lib/data'
+import CardProject from './components/cardProject'
 
 export default function page() {
   const projectBack = projects.filter((project) => project.stack === 'back')
