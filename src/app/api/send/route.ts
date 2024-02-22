@@ -1,6 +1,6 @@
-import { EmailTemplate } from '@/app/components/EmailTemplate'
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { EmailTemplate } from '../components/emailTemplate'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
