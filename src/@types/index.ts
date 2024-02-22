@@ -10,3 +10,17 @@ export type PropsProject = {
     page: string
   }
 }
+
+export type CommentsProps = {
+  comment: {
+    id: string
+    name: string
+    stack: string
+    image: string
+    comment: string
+    linkedin: {
+      link: string
+      title: string
+    }
+  }
+}

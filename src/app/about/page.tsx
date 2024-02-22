@@ -1,7 +1,7 @@
-import { profile } from '@/lib/data'
 import { Download } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { profile } from '../_lib/data'
 
 export default function page() {
   return (

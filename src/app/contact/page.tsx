@@ -1,12 +1,12 @@
-import CardMap from '@/components/CardMap'
-import Formulario from '@/components/Formulario'
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
+} from '../_components/ui/card'
+import CardMap from './components/cardMap'
+import Formulario from './components/formulario'
 
 export default function page() {
   return (
@@ -26,6 +26,7 @@ export default function page() {
               </CardDescription>
             </CardHeader>
             <CardContent>
+              {/* FORMULARIO */}
               <Formulario />
             </CardContent>
           </Card>
