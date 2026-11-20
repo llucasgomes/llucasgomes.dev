@@ -21,7 +21,7 @@ interface FilterOption {
         <!-- Header da Seção -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
           <app-section-header
-            eyebrow="Arquitetura & Engenharia"
+            eyebrow="Arquitetura & Desenvolvimento"
             title="Casos de Estudo Técnicos"
             description="Soluções estruturadas para desafios reais de concorrência, telemetria em alta frequência, resiliência offline e modularização front-end."
           ></app-section-header>

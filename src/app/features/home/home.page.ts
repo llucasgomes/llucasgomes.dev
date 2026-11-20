@@ -4,8 +4,10 @@ import { NavbarComponent } from '@/shared/components/navbar/navbar.component';
 import { ProjectModalComponent } from '@/shared/components/project-modal/project-modal.component';
 import { HeroSectionComponent } from './sections/hero-section/hero-section.component';
 import { ProjectsBentoComponent } from './sections/projects-bento/projects-bento.component';
+import { GithubReposComponent } from './sections/github-repos/github-repos.component';
 import { StackMatrixComponent } from './sections/stack-matrix/stack-matrix.component';
 import { ExperienceTimelineComponent } from './sections/experience-timeline/experience-timeline.component';
+import { TestimonialsSectionComponent } from './sections/testimonials-section/testimonials-section.component';
 import { ContactFooterComponent } from './sections/contact-footer/contact-footer.component';
 
 @Component({
@@ -15,8 +17,10 @@ import { ContactFooterComponent } from './sections/contact-footer/contact-footer
     NavbarComponent,
     HeroSectionComponent,
     ProjectsBentoComponent,
+    GithubReposComponent,
     StackMatrixComponent,
     ExperienceTimelineComponent,
+    TestimonialsSectionComponent,
     ContactFooterComponent,
     ProjectModalComponent,
   ],
@@ -29,8 +33,10 @@ import { ContactFooterComponent } from './sections/contact-footer/contact-footer
       <main class="flex-1">
         <app-hero-section></app-hero-section>
         <app-projects-bento (selectProject)="openProjectModal($event)"></app-projects-bento>
+        <app-github-repos></app-github-repos>
         <app-stack-matrix></app-stack-matrix>
         <app-experience-timeline></app-experience-timeline>
+        <app-testimonials-section></app-testimonials-section>
       </main>
 
       <!-- Rodapé & Contato -->

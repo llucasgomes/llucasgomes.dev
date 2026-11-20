@@ -28,7 +28,7 @@ import { RevealOnScrollDirective } from '@/shared/directives/reveal-on-scroll.di
               Vamos discutir a arquitetura do seu próximo projeto?
             </h2>
             <p class="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Disponível para posições sênior de engenharia de software, liderança front-end e consultorias arquiteturais especializadas em sistemas críticos.
+              Disponível para posições sênior de desenvolvimento de software, liderança técnica front-end e consultorias especializadas em aplicações modernas.
             </p>
           </div>
 

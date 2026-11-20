@@ -28,7 +28,7 @@ import { RevealOnScrollDirective } from '@/shared/directives/reveal-on-scroll.di
         <!-- Headline de Alto Impacto -->
         <div appRevealOnScroll [delay]="100" class="space-y-4 max-w-4xl">
           <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.12]">
-            Engenharia Front-End & Full-Stack com <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400">foco em escala</span> e tolerância a falhas.
+            Desenvolvimento Front-End & Full-Stack com <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400">foco em escala</span> e alta performance.
           </h1>
           <p class="text-base sm:text-xl text-muted-foreground leading-relaxed max-w-2xl font-normal">
             {{ hero.bio }}

@@ -1,295 +1,328 @@
 import { Project } from '../models/project.model';
 import { ExperienceItem, EducationItem } from '../models/experience.model';
+import { TestimonialItem } from '../models/testimonial.model';
+
+export interface StackSkill {
+  name: string;
+  highlight?: boolean;
+  tags: string[];
+}
 
 export interface StackCategory {
   title: string;
   domain: string;
   description: string;
-  skills: {
-    name: string;
-    level: 'Avançado' | 'Especialista' | 'Proficiente';
-    highlight?: boolean;
-    tags: string[];
-  }[];
+  skills: StackSkill[];
 }
 
 export const PORTFOLIO_HERO = {
-  availability: 'Disponível para projetos & oportunidades técnicas',
-  role: 'Engenheiro Front-End & Full-Stack',
-  headline: 'Construindo interfaces críticas, sistemas conectados e arquiteturas resilientes.',
-  bio: 'Especialista no ecossistema Angular moderno, TypeScript e sistemas distribuídos de alta performance. Focado em UX rigorosa, clean code, padrões desacoplados e previsibilidade operacional.',
+  availability: 'Disponível para projetos & oportunidades de Front-End',
+  role: 'Desenvolvedor Front-End',
+  headline: 'Criando interfaces modernas, responsivas e experiências web de alto impacto.',
+  bio: 'Desenvolvedor Front-End com sólida vivência no ecossistema TypeScript, Angular, Next.js, React e Tailwind CSS. Experiência prática no desenvolvimento de produtos digitais, suporte operacional em informática e mais de 3 anos de monitoria técnica formando novos desenvolvedores.',
   metrics: [
-    { value: '+6', label: 'Anos de Experiência', detail: 'em sistemas web & mobile' },
-    { value: '99.9%', label: 'SLA em Produção', detail: 'arquiteturas de baixa latência' },
-    { value: '+20', label: 'Sistemas Entregues', detail: 'de IoT a plataformas SaaS' },
-    { value: '<100ms', label: 'TTFB Otimizado', detail: 'Core Web Vitals & edge caching' },
+    { value: '+3', label: 'Anos em Tecnologia', detail: 'desenvolvimento web & monitoria' },
+    { value: '+100', label: 'Devs Mentorados', detail: 'auxílio técnico na StackX' },
+    { value: 'Modern', label: 'Stack Frontend', detail: 'Angular, React, Next & Tailwind' },
+    { value: '100%', label: 'Foco em UX & Performance', detail: 'interfaces acessíveis e limpas' },
   ],
   links: {
     github: 'https://github.com/llucasgomes',
-    linkedin: 'https://linkedin.com/in/llucasgomes',
-    email: 'contato@llucasgomes.dev',
+    linkedin: 'https://www.linkedin.com/in/llucasgomess/',
+    email: 'lucas.gomes.manaus@gmail.com',
     resume: '/resume.pdf',
-    whatsapp: 'https://wa.me/5500000000000',
+    whatsapp: 'https://wa.me/5592000000000',
   },
 };
 
 export const PORTFOLIO_PROJECTS: Project[] = [
   {
-    id: 'iot-smart-telemetry',
-    title: 'Plataforma Industrial de Telemetria IoT & Edge',
-    category: 'iot-sistemas',
-    categoryLabel: 'IoT & Sistemas',
-    featured: true,
-    colSpan: 'large',
-    summary: 'Arquitetura de processamento em tempo real para sensores de campo com ingestão via MQTT, visualização em alta taxa de quadros e tolerância a falhas na ponta.',
-    metrics: [
-      { label: 'Eventos/seg', value: '15.000 req/s' },
-      { label: 'Latência ponta-a-ponta', value: '< 45ms' },
-      { label: 'Uptime', value: '99.98%' },
-    ],
-    stack: ['Angular 22', 'TypeScript', 'MQTT/WebSockets', 'Go', 'TimescaleDB', 'Docker', 'Linux Embedded'],
-    architecture: {
-      problem: 'Ambientes industriais com oscilação severa de conectividade e alta densidade de telemetria necessitavam de dashboard operacional com renderização contínua sem travar a thread do navegador.',
-      decisions: [
-        'Utilização de Web Workers no front-end para decodificação de payloads binários (Protobuf), liberando a UI thread do Angular.',
-        'Implementação de Angular Signals para reatividade atômica sem over-fetching ou ciclos desnecessários de change detection.',
-        'Backpressure handling com fila no cliente e fallback para armazenamento local via IndexedDB quando desconectado.',
-        'Backend em Go com pool de conexões MQTT e particionamento temporal em TimescaleDB.',
-      ],
-      techImpact: [
-        'Zero perda de métricas críticas durante quedas de link de até 72 horas.',
-        'Redução de 68% no consumo de memória no navegador dos operadores de sala de controle.',
-        'Renderização de gráficos com 10.000 pontos em 60 FPS contínuos.',
-      ],
-      systemHighlights: [
-        'Decodificação em Web Worker via Protobuf',
-        'State machine reativa com Signals',
-        'Cache offline no IndexedDB',
-        'Pipeline CI/CD com testes de mutação',
-      ],
-    },
-    links: {
-      github: 'https://github.com/llucasgomes/iot-edge-telemetry',
-      demo: 'https://telemetry-demo.llucasgomes.dev',
-    },
-  },
-  {
-    id: 'enterprise-microfrontends-hub',
-    title: 'Hub Corporativo & Micro-Frontends de Missão Crítica',
-    category: 'fullstack-mobile',
-    categoryLabel: 'Full-Stack & Mobile',
-    featured: true,
-    colSpan: 'medium',
-    summary: 'Orquestração de micro-frontends independentes com Module Federation, design system unificado e autenticação centralizada com isolamento de contexto.',
-    metrics: [
-      { label: 'Deploy time', value: '-65%' },
-      { label: 'Bundle size base', value: '48 kB' },
-      { label: 'Escalabilidade', value: '8 squads' },
-    ],
-    stack: ['Angular 22', 'Native Federation', 'Tailwind CSS', 'Node.js', 'Redis', 'GitHub Actions'],
-    architecture: {
-      problem: 'Monólito front-end com tempo excessivo de build e frequentes conflitos de regressão entre 8 equipes interdisciplinares.',
-      decisions: [
-        'Migração para arquitetura federada usando Native Federation baseada em ES Modules sem acoplamento a bundlers legados.',
-        'Shared State leve através de Custom Events tipados e Service Bus no Browser.',
-        'Design System agnóstico empacotado como biblioteca interna com tokens semânticos.',
-      ],
-      techImpact: [
-        'Deploys desacoplados por squad sem dependência de janela de liberação global.',
-        'Redução do tempo médio de integração contínua de 22 minutos para 4 minutos.',
-      ],
-      systemHighlights: [
-        'Native Federation com ES Modules',
-        'Design System com Tailwind v4',
-        'Canary deployments automatizados',
-      ],
-    },
-    links: {
-      github: 'https://github.com/llucasgomes/enterprise-mfe-core',
-      demo: 'https://mfe-hub.llucasgomes.dev',
-    },
-  },
-  {
-    id: 'mobile-logistics-offline-first',
-    title: 'App de Operações Logísticas Offline-First',
-    category: 'fullstack-mobile',
-    categoryLabel: 'Full-Stack & Mobile',
-    featured: false,
-    colSpan: 'medium',
-    summary: 'Aplicação híbrida móvel com sincronização bidirecional e reconciliação de conflitos para conferência de cargas em centros de distribuição e rotas rurais.',
-    metrics: [
-      { label: 'Tempo de sincronização', value: '< 1.2s' },
-      { label: 'Dispositivos ativos', value: '+1.500' },
-      { label: 'Taxa de erro de sync', value: '< 0.01%' },
-    ],
-    stack: ['Capacitor', 'Angular', 'SQLite / WatermelonDB', 'NestJS', 'PostgreSQL', 'Docker'],
-    architecture: {
-      problem: 'Motoristas e operadores precisavam registrar validações em galpões com blindagem eletromagnética e rodovias sem sinal de dados celular.',
-      decisions: [
-        'Padrão CRDT (Conflict-free Replicated Data Types) simplificado para resolução determinística de divergências de estoque.',
-        'Isolamento da camada de persistência com banco local SQLite criptografado (SQLCipher).',
-        'Background sync resiliente aproveitando APIs nativas do Android/iOS através de Capacitor.',
-      ],
-      techImpact: [
-        'Operação ininterrupta durante todo o trajeto de entrega, sem frustração para os motoristas.',
-        'Eliminação de divergências manuais de faturamento causadas por sobrescrita acidental de dados.',
-      ],
-      systemHighlights: [
-        'Persistência local com SQLite encriptado',
-        'Reconciliação determinística de conflitos',
-        'Background Task API nativa',
-      ],
-    },
-    links: {
-      github: 'https://github.com/llucasgomes/logistics-offline-first',
-    },
-  },
-  {
-    id: 'developer-observability-cockpit',
-    title: 'Cockpit de Observabilidade & Análise de Tráfego HTTP',
+    id: 'domus-petra',
+    title: 'Domus Petra — Plataforma de Inovação & Hackathon',
     category: 'web-apps',
-    categoryLabel: 'Web Apps',
-    featured: false,
+    categoryLabel: 'Web Apps & Front-End',
+    featured: true,
     colSpan: 'large',
-    summary: 'Painel técnico minimalista com visualização de rastreamento distribuído (OpenTelemetry), inspeção de gargalos de API e visualização de grafos de dependência.',
+    summary: 'Landing page e plataforma interativa de alto impacto desenvolvida para o Hackathon StackX, com design imersivo, alta performance e 24 estrelas no GitHub.',
     metrics: [
-      { label: 'Throughput suportado', value: '50k spans/s' },
-      { label: 'Tempo de resposta UI', value: '16ms (60fps)' },
-      { label: 'Lighthouse Score', value: '100 / 100' },
+      { label: 'Reconhecimento', value: '24 Stars' },
+      { label: 'Lighthouse Performance', value: '98 / 100' },
+      { label: 'Engajamento', value: '+500 acessos' },
     ],
-    stack: ['Angular 22', 'RxJS', 'ZardUI', 'Web Audio/Canvas API', 'FastAPI', 'ClickHouse'],
+    stack: ['TypeScript', 'React.js', 'Tailwind CSS', 'Vite', 'Figma', 'GitHub Actions'],
     architecture: {
-      problem: 'Dificuldade de diagnosticar cascatas de lentidão entre dezenas de microsserviços em tempo de execução sem interfaces inchadas.',
+      problem: 'Necessidade de criar uma experiência visual impactante e responsiva para engajar competidores, mentores e jurados no maior Hackathon da comunidade StackX.',
       decisions: [
-        'Virtualização virtual completa de listas de spans com Angular CDK, evitando estouro de nós na DOM.',
-        'Visualização personalizada em Canvas HTML5 de alta performance para a linha temporal das requisições.',
-        'Zero bibliotecas CSS runtime pesadas; 100% Tailwind utilitário compilado.',
+        'Construção de componentes desacoplados e tipados em TypeScript com Tailwind CSS para micro-interações fluidas.',
+        'Otimização rigorosa de imagens e assets estáticos para carregamento instantâneo em conexões móveis.',
+        'Arquitetura modular focada em reusabilidade de seções e navegação fluida.',
       ],
       techImpact: [
-        'Tempo de diagnóstico de incidentes de produção reduzido pela metade.',
-        'Consumo de CPU no cliente inferior a 5% mesmo com streaming contínuo de spans.',
+        'Projeto com maior engajamento e estrelas no repositório público.',
+        'Feedback unânime da comunidade de alunos e mentores pelo design refinado e responsividade.',
       ],
       systemHighlights: [
-        'Virtual Scrolling com Angular CDK',
-        'Canvas custom renderer com double-buffering',
-        'OpenTelemetry Protocol (OTLP) parser',
+        'Design moderno com micro-interações',
+        'Componentização limpa em React + TypeScript',
+        'Deploy automatizado com continuous delivery',
       ],
     },
     links: {
-      github: 'https://github.com/llucasgomes/observability-cockpit',
-      demo: 'https://cockpit.llucasgomes.dev',
+      github: 'https://github.com/llucasgomes/domus-petra',
+    },
+  },
+  {
+    id: 'jornada-pim',
+    title: 'Jornada PIM — Gestão de Ideias de Inovação',
+    category: 'web-apps',
+    categoryLabel: 'Web Apps & Gestão',
+    featured: true,
+    colSpan: 'medium',
+    summary: 'Plataforma web colaborativa voltada para a gestão de ideias de inovação e projetos para indústrias do Polo Industrial de Manaus.',
+    metrics: [
+      { label: 'Foco Regional', value: 'Polo Industrial' },
+      { label: 'Arquitetura', value: 'Next.js & React' },
+      { label: 'Tipagem', value: '100% TypeScript' },
+    ],
+    stack: ['TypeScript', 'Next.js', 'React.js', 'Tailwind CSS', 'PostgreSQL', 'APIs REST'],
+    architecture: {
+      problem: 'Empresas do Polo Industrial de Manaus precisavam de um fluxo centralizado e intuitivo para submissão, triagem e acompanhamento de projetos inovadores.',
+      decisions: [
+        'Utilização de Next.js com TypeScript para páginas rápidas e formulários estruturados com validação de regras de negócios.',
+        'Interface limpa com Tailwind CSS focada na experiência do usuário corporativo e facilidade de navegação.',
+        'Estruturação de fluxo de status de ideias com persistência relacional.',
+      ],
+      techImpact: [
+        'Interface centrada na agilidade da tomada de decisão de gestores de inovação.',
+        'Estrutura pronta para expansão e integração com sistemas legados das fábricas.',
+      ],
+      systemHighlights: [
+        'Formulários reativos e tipados',
+        'Gestão de estados de projetos',
+        'Interface adaptada ao contexto industrial',
+      ],
+    },
+    links: {
+      github: 'https://github.com/llucasgomes/jornada-pim',
+    },
+  },
+  {
+    id: 'fsdbchat',
+    title: 'FSDB Chat — Aplicativo Desktop com Tauri & Rust',
+    category: 'fullstack-mobile',
+    categoryLabel: 'Desktop & Sistemas',
+    featured: false,
+    colSpan: 'medium',
+    summary: 'Aplicativo de chat desktop de alta performance construído com Tauri, Rust e React/TypeScript, utilizando o sistema de arquivos (FSDB) como motor de persistência.',
+    metrics: [
+      { label: 'Consumo de RAM', value: '< 30 MB' },
+      { label: 'Persistência', value: 'Zero SQL / FSDB' },
+      { label: 'Engine Nativa', value: 'Rust + Tauri' },
+    ],
+    stack: ['Tauri', 'Rust', 'React.js', 'TypeScript', 'Tailwind CSS', 'FSDB Storage'],
+    architecture: {
+      problem: 'Aplicativos desktop tradicionais em Electron consomem centenas de megabytes de RAM e exigem bancos de dados complexos mesmo para operações locais simples.',
+      decisions: [
+        'Adoção do Tauri com core em Rust para criar um binário ultraleve, seguro e com footprint mínimo de memória.',
+        'Desenvolvimento de motor de persistência baseado em arquivos (FSDB) para leitura e escrita atômica e veloz.',
+        'Interface rica e responsiva em React com TypeScript comunicando-se via IPC com o backend nativo em Rust.',
+      ],
+      techImpact: [
+        'Redução de mais de 85% no consumo de memória em relação a apps desktop baseados em Electron.',
+        'Inicialização quase instantânea e armazenamento portátil de dados.',
+      ],
+      systemHighlights: [
+        'Core nativo compilado em Rust',
+        'Bridge IPC bidirecional com React',
+        'Persistência atômica no file system',
+      ],
+    },
+    links: {
+      github: 'https://github.com/llucasgomes/fsdbchat',
+    },
+  },
+  {
+    id: 'intelbras-simnext-linux',
+    title: 'Intelbras SIM Next para Linux (Wine & Shell)',
+    category: 'iot-sistemas',
+    categoryLabel: 'Linux & Sistemas',
+    featured: false,
+    colSpan: 'large',
+    summary: 'Solução técnica de engenharia com scripts automatizados em Shell e patches de compatibilidade Wine para execução estável do software Intelbras SIM Next no Linux.',
+    metrics: [
+      { label: 'Compatibilidade', value: 'Linux Mint / Ubuntu' },
+      { label: 'Automação', value: '100% Shell Script' },
+      { label: 'Estabilidade', value: 'Monitoramento CFTV' },
+    ],
+    stack: ['Shell Script (Bash)', 'Linux', 'Wine', 'Intelbras SIM Next', 'CFTV', 'Automação'],
+    architecture: {
+      problem: 'O software oficial de monitoramento de câmeras e CFTV Intelbras SIM Next é exclusivamente projetado para Windows, criando entraves em ambientes operacionais rodando Linux.',
+      decisions: [
+        'Desenvolvimento de script de instalação automatizada que configura o prefixo Wine com todas as DLLs e dependências nativas necessárias.',
+        'Correção de falhas de renderização de vídeo e travamentos de interface através de parâmetros específicos de kernel e drivers gráficos.',
+        'Criação de lançador desktop com verificação automática de integridade na inicialização.',
+      ],
+      techImpact: [
+        'Permitiu a estações operacionais com Linux monitorar sistemas de CFTV sem necessidade de licenças adicionais de Windows.',
+        'Documentação passo a passo utilizada pela comunidade de administradores de sistemas e operadores de TI.',
+      ],
+      systemHighlights: [
+        'Script de configuração one-click',
+        'Tratamento de dependências de vídeo Wine',
+        'Automação de rotinas no sistema operacional',
+      ],
+    },
+    links: {
+      github: 'https://github.com/llucasgomes/intelbras-simnext-linux',
     },
   },
 ];
 
 export const PORTFOLIO_STACK: StackCategory[] = [
   {
-    title: 'Front-End & Mobile',
-    domain: 'Experiência & Clientes',
-    description: 'Aplicações web reativas de alto desempenho e clientes mobile com arquitetura previsível e acessível.',
+    title: 'Front-End, Mobile & Desktop',
+    domain: 'Interfaces & Aplicações',
+    description: 'Desenvolvimento de interfaces modernas, sistemas interativos e aplicações multiplataforma com foco em UX e código limpo.',
     skills: [
-      { name: 'Angular (22+)', level: 'Especialista', highlight: true, tags: ['Signals', 'Standalone', 'OnPush', 'ZardUI'] },
-      { name: 'TypeScript', level: 'Especialista', highlight: true, tags: ['Strict Types', 'Generics', 'AST'] },
-      { name: 'Tailwind CSS v4', level: 'Especialista', highlight: true, tags: ['Tokens', 'CSS Variables', 'Micro-interações'] },
-      { name: 'RxJS & State Machines', level: 'Avançado', tags: ['Complex Streams', 'Reactivity', 'Schedulers'] },
-      { name: 'Capacitor & Mobile', level: 'Avançado', tags: ['Cross-platform', 'Plugins Nativos', 'Offline-First'] },
-      { name: 'Web Performance & CWV', level: 'Especialista', tags: ['Lighthouse 100', 'Bundle Budget', 'Hydration'] },
+      { name: 'React.js & Next.js', highlight: true, tags: ['App Router', 'Server Components', 'Hooks', 'Tailwind'] },
+      { name: 'TypeScript & JavaScript', highlight: true, tags: ['Tipagem Estrita', 'ES6+', 'Generics', 'Clean Code'] },
+      { name: 'Tailwind CSS & Estilização', highlight: true, tags: ['Design Tokens', 'Micro-animações', 'Responsividade'] },
+      { name: 'Angular (20+ / 22+)', highlight: true, tags: ['Signals', 'Standalone', 'ZardUI', 'Tailwind v4'] },
+      { name: 'Mobile (Capacitor / Ionic)', tags: ['Cross-Platform', 'APIs Nativas', 'Android'] },
+      { name: 'Desktop (Tauri & Rust)', tags: ['Tauri Apps', 'React Desktop', 'FSDB'] },
     ],
   },
   {
     title: 'Back-End & APIs',
     domain: 'Lógica de Negócios & Serviços',
-    description: 'APIs escaláveis, contratos fortemente tipados e serviços robustos para alta concorrência.',
+    description: 'Construção de APIs REST, automação de dados e serviços estruturados com boas práticas de arquitetura.',
     skills: [
-      { name: 'Node.js & NestJS', level: 'Avançado', highlight: true, tags: ['Clean Arch', 'Dependency Injection', 'REST'] },
-      { name: 'Go (Golang)', level: 'Proficiente', tags: ['Goroutines', 'Microservices', 'Low Latency'] },
-      { name: 'GraphQL & gRPC', level: 'Avançado', tags: ['Protobuf', 'Schema Stitching', 'Type-Safe Contracts'] },
-      { name: 'Autenticação & Segurança', level: 'Avançado', tags: ['OAuth2', 'OIDC', 'JWT', 'RBAC'] },
+      { name: 'Node.js & TypeScript', highlight: true, tags: ['Express', 'REST APIs', 'Clean Architecture', 'INDT'] },
+      { name: 'C# & .NET', highlight: true, tags: ['ASP.NET Core', 'Web API', 'Entity Framework', 'LINQ'] },
+      { name: 'Bun & ElysiaJS', tags: ['High Throughput', 'TypeScript Runtime', 'OpenAI API'] },
+      { name: 'Web Scraping & Automação', tags: ['Puppeteer', 'Extração de Dados', 'Bots'] },
     ],
   },
   {
-    title: 'Dados & Mensageria',
-    domain: 'Persistência & Fluxos',
-    description: 'Armazenamento eficiente, modelagem relacional/não-relacional e mensageria distribuída.',
+    title: 'Dados, Integrações & Serviços',
+    domain: 'Persistência & Ecossistema',
+    description: 'Modelagem de dados, persistência relacional, gateways de pagamento e integrações com serviços modernos.',
     skills: [
-      { name: 'PostgreSQL & TimescaleDB', level: 'Avançado', highlight: true, tags: ['Indexing', 'Query Optimization', 'Time-series'] },
-      { name: 'Redis', level: 'Avançado', tags: ['In-memory Cache', 'Pub/Sub', 'Rate Limiting'] },
-      { name: 'MQTT & WebSockets', level: 'Avançado', highlight: true, tags: ['IoT', 'Duplex Streaming', 'Broker Clustering'] },
-      { name: 'ClickHouse / OLAP', level: 'Proficiente', tags: ['Analytics', 'High-throughput', 'Aggregation'] },
+      { name: 'PostgreSQL & MySQL', highlight: true, tags: ['Modelagem Relacional', 'CRUD', 'SQL Queries'] },
+      { name: 'Entity Framework & ORMs', tags: ['Migrations', 'Code-First', 'Prisma'] },
+      { name: 'Gateways de Pagamento (Stripe)', highlight: true, tags: ['Stripe Checkout', 'Webhooks', 'Assinaturas'] },
+      { name: 'Integração de IA (OpenAI)', tags: ['APIs LLM', 'Embeddings', 'Streaming'] },
     ],
   },
   {
-    title: 'Infraestrutura, Linux & IoT',
-    domain: 'DevOps, Edge & Operação',
-    description: 'Automação de ambientes, containeres, sistemas embarcados e esteiras de entrega contínua.',
+    title: 'Linux, Suporte & Ambiente',
+    domain: 'Infra, Ferramentas & Operação',
+    description: 'Ambientes Linux, automação de rotinas, versionamento profissional e experiência sólida em suporte computacional.',
     skills: [
-      { name: 'Docker & Containerização', level: 'Avançado', highlight: true, tags: ['Multi-stage Builds', 'Compose', 'Hardening'] },
-      { name: 'Linux & Shell Scripting', level: 'Avançado', tags: ['Systemd', 'Networking', 'Kernel Tuning'] },
-      { name: 'CI/CD & DevOps', level: 'Avançado', tags: ['GitHub Actions', 'Semantic Release', 'Automated Testing'] },
-      { name: 'Sistemas Embarcados / IoT', level: 'Proficiente', tags: ['ESP32', 'Raspberry Pi', 'Serial/I2C Protocols'] },
+      { name: 'Suporte de TI & Infraestrutura', highlight: true, tags: ['Hardware', 'Redes Locais', 'Operação de TI'] },
+      { name: 'Git & GitHub Workflows', highlight: true, tags: ['Versionamento', 'Branches', 'Code Review', 'CI/CD'] },
+      { name: 'Linux & Shell Scripting', highlight: true, tags: ['Bash Scripting', 'Wine', 'Linux Mint/Ubuntu', 'Automação'] },
+      { name: 'Docker & Containerização', tags: ['Dockerfiles', 'Ambientes Isolados', 'Containers'] },
     ],
   },
 ];
 
 export const PORTFOLIO_EXPERIENCES: ExperienceItem[] = [
   {
-    id: 'lead-frontend-eng',
-    role: 'Engenheiro de Software Sênior / Front-End Tech Lead',
-    company: 'Empresa de Tecnologia & Soluções Digitais',
-    period: '2023 — Presente',
-    location: 'Remoto',
+    id: 'aslan-ti',
+    role: 'Operador de Informática',
+    company: 'ASLAN Curso de Idiomas',
+    period: 'ago. de 2025 — o momento',
+    location: 'Manaus, Amazonas (Presencial)',
     type: 'Tempo Integral',
-    description: 'Liderança técnica da arquitetura de front-end para plataformas corporativas de missão crítica, guiando padrões de engenharia, governança de design system e qualidade de software.',
+    description: 'Atuação na operação de sistemas computacionais, suporte operacional a usuários e manutenção preventiva e corretiva de equipamentos e infraestrutura tecnológica da instituição.',
     achievements: [
-      'Liderou a transição da arquitetura legada para Angular moderno com Signals, reduzindo retrabalho de estado em mais de 40%.',
-      'Estruturou biblioteca interna de componentes UI de alto contraste com conformidade WCAG 2.1 AA.',
-      'Mentoria ativa de engenheiros plenos e júniors através de pareamento e revisões técnicas aprofundadas.',
+      'Promoção e transição interna para a equipe de tecnologia após histórico de destaque na instituição.',
+      'Suporte direto a colaboradores e docentes garantindo continuidade das operações diárias de informática.',
+      'Resolução ágil de chamados técnicos de software, rede local e sistemas internos.',
     ],
-    stack: ['Angular', 'TypeScript', 'Tailwind CSS', 'RxJS', 'CI/CD', 'Jest/Vitest'],
+    stack: ['Operações Computacionais', 'Suporte de TI', 'Redes', 'Hardware', 'Windows/Linux'],
     isCurrent: true,
   },
   {
-    id: 'fullstack-iot-eng',
-    role: 'Engenheiro Full-Stack & IoT Systems',
-    company: 'Indústria & Automação Inteligente',
-    period: '2021 — 2023',
-    location: 'Híbrido',
+    id: 'aslan-porteiro',
+    role: 'Porteiro',
+    company: 'ASLAN Curso de Idiomas',
+    period: 'set. de 2022 — ago. de 2025 · 3 anos',
+    location: 'Manaus, Amazonas (Presencial)',
     type: 'Tempo Integral',
-    description: 'Desenvolvimento de sistemas de telemetria industrial de ponta a ponta, desde a coleta em campo com brokers MQTT até dashboards de acompanhamento em tempo real.',
+    description: 'Atuação na portaria e recepção com foco em atendimento ao público, comunicação clara, segurança patrimonial e ambiente colaborativo que impulsionou a promoção para a área de TI.',
     achievements: [
-      'Projetou interface reativa em tempo real com streaming de dados para dezenas de fábricas monitoradas simultaneamente.',
-      'Otimizou ingestão de dados em Go e PostgreSQL, reduzindo o tempo de consulta de relatórios analíticos de 12s para menos de 400ms.',
-      'Implementou suporte para operação desconectada com tolerância a falhas na camada móvel.',
+      'Construção de relacionamentos de confiança com alunos, pais e equipe pedagógica.',
+      'Proatividade e dedicação que abriram portas para a transição profissional rumo à área de informática da empresa.',
     ],
-    stack: ['Angular', 'Node.js', 'Go', 'MQTT', 'TimescaleDB', 'Docker', 'Linux'],
+    stack: ['Comunicação Interpessoal', 'Organização', 'Ambiente Colaborativo', 'Resolução de Problemas'],
   },
   {
-    id: 'software-dev-mobile',
-    role: 'Desenvolvedor Front-End & Mobile',
-    company: 'Consultoria de Software & Produtos Digitais',
-    period: '2019 — 2021',
-    location: 'São Paulo, Brasil',
-    type: 'Tempo Integral',
-    description: 'Construção de aplicações web responsivas e aplicativos híbridos para clientes dos setores de logística, varejo e finanças.',
+    id: 'sd-tecnologia',
+    role: 'Dev Front-End Junior',
+    company: 'SD Tecnologia',
+    period: 'mai. de 2024 — fev. de 2025 · 10 meses',
+    location: 'Remoto',
+    type: 'Estágio',
+    description: 'Desenvolvimento e evolução de interfaces de usuário funcionais e interativas para produtos digitais em ambiente colaborativo e ágil.',
     achievements: [
-      'Entregou 7 aplicações do zero à produção mantendo índices de crash-free acima de 99.8%.',
-      'Implementou pipelines de entrega contínua com geração automatizada de releases para App Store e Google Play.',
+      'Colaborou ativamente com designers e desenvolvedores para transformar conceitos e protótipos em código de alta fidelidade.',
+      'Implementou componentes reutilizáveis utilizando Next.js, React.js, Tailwind CSS e TypeScript.',
+      'Desenvolveu layouts totalmente responsivos, micro-animações e realizou otimizações contínuas de performance front-end.',
     ],
-    stack: ['Angular', 'Ionic / Capacitor', 'TypeScript', 'SCSS/Tailwind', 'REST APIs'],
+    stack: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML5/CSS3', 'Git'],
+  },
+  {
+    id: 'stackx-monitor',
+    role: 'Monitor de Front-End',
+    company: 'StackX - Formação de Desenvolvedores',
+    period: 'mar. de 2022 — fev. de 2025 · 3 anos',
+    location: 'Remoto',
+    type: 'Aprendiz / Monitoria Técnica',
+    description: 'Monitoria e mentoria técnica de alunos em formação no ecossistema de desenvolvimento de software, prestando auxílio diário na resolução de desafios práticos de código.',
+    achievements: [
+      'Orientou dezenas de novos desenvolvedores em conceitos fundamentais e avançados de Front-End (HTML, CSS, JavaScript e frameworks modernos).',
+      'Conduziu sessões de code review e depuração de erros, acelerando o aprendizado prático da comunidade.',
+      'Desenvolveu forte habilidade de comunicação interpessoal e capacidade de explicar arquiteturas e algoritmos complexos de forma clara.',
+    ],
+    stack: ['JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'React', 'Git/GitHub', 'Mentoria Técnica'],
   },
 ];
 
 export const PORTFOLIO_EDUCATION: EducationItem[] = [
   {
-    degree: 'Bacharelado em Engenharia de Computação / Ciência da Computação',
-    institution: 'Universidade',
-    period: 'Concluído',
-    highlights: ['Foco em Sistemas Distribuídos, Algoritmos e Arquitetura de Computadores'],
+    degree: 'Desenvolvimento Web Full Stack (372 horas)',
+    institution: 'INDT Educacional — Instituto de Desenvolvimento Tecnológico',
+    period: 'Set. de 2025 — Mai. de 2026',
+    highlights: [
+      'Formação intensiva e aprofundada de 372h em desenvolvimento de software moderno (Front-End & Back-End).',
+      'Construção de aplicações completas, APIs REST, integração com bancos de dados e boas práticas de arquitetura.',
+      'Certificado emitido pelo prestigiado polo tecnológico INDT em Manaus/AM.',
+    ],
   },
   {
-    degree: 'Certificações & Especializações Técnicas Contínuas',
-    institution: 'Google Cloud, Linux Foundation & Arquitetura Web',
-    period: 'Recorrente',
-    highlights: ['Cloud Architecture', 'Web Performance & Accessibility', 'Secure Coding Practices'],
+    degree: 'Programação Front-End Especializada (+80 horas)',
+    institution: 'DevQuest — Formação Front-End',
+    period: 'Concluído em Set. de 2023',
+    highlights: [
+      'Imersão teórica e prática intensiva de mais de 80h focada no ecossistema moderno de desenvolvimento Front-End.',
+      'Domínio avançado de HTML5 semântico, CSS3 moderno, flexbox/grid, JavaScript assíncrono, React e responsividade.',
+      'Ministrado pelos professores Ricardo Dias e Roberto Dias.',
+    ],
+  },
+  {
+    degree: 'Formação em Desenvolvimento de Software & Front-End',
+    institution: 'StackX — Formação de Desenvolvedores de Software',
+    period: '2022 — 2025',
+    highlights: [
+      'Especialização prática em desenvolvimento web moderno (HTML5, CSS3, JavaScript, TypeScript, React e ecossistema de APIs).',
+      'Atuação destacada como Monitor Técnico por 3 anos prestando mentoria e code reviews para a comunidade de alunos.',
+    ],
   },
 ];
+
+export const PORTFOLIO_TESTIMONIALS: TestimonialItem[] = [
+  // Esta lista será preenchida com os depoimentos reais fornecidos pelo usuário
+];
+

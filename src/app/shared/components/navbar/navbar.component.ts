@@ -23,12 +23,18 @@ import { ZardButtonComponent } from '../button/button.component';
         </a>
 
         <!-- Links de Navegação Desktop -->
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
           <a
             href="#projetos"
             class="text-muted-foreground transition-colors hover:text-foreground hover:underline underline-offset-8"
           >
             Projetos
+          </a>
+          <a
+            href="#repos"
+            class="text-muted-foreground transition-colors hover:text-foreground hover:underline underline-offset-8"
+          >
+            Open Source
           </a>
           <a
             href="#stack"
@@ -116,6 +122,13 @@ import { ZardButtonComponent } from '../button/button.component';
             class="block py-1.5 text-sm font-medium text-foreground hover:text-emerald-500"
           >
             Projetos & Case Studies
+          </a>
+          <a
+            (click)="closeMobileMenu()"
+            href="#repos"
+            class="block py-1.5 text-sm font-medium text-foreground hover:text-emerald-500"
+          >
+            Repositórios GitHub
           </a>
           <a
             (click)="closeMobileMenu()"

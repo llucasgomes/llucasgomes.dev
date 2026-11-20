@@ -90,27 +90,58 @@ import { RevealOnScrollDirective } from '@/shared/directives/reveal-on-scroll.di
         </div>
 
         <!-- Seção de Formação Acadêmica & Especializações -->
-        <div class="mt-16 pt-12 border-t border-border/80">
-          <h3 class="text-lg font-bold tracking-tight text-foreground mb-6 flex items-center gap-2">
-            <span class="font-mono text-xs uppercase text-emerald-500 tracking-wider">Formação & Certificações</span>
-          </h3>
+        <div class="mt-20 pt-16 border-t border-border/80 space-y-8">
+          <div class="space-y-2">
+            <div class="inline-flex items-center gap-2">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+              <span class="font-mono text-xs font-semibold tracking-wider uppercase text-muted-foreground">
+                Formação & Especializações
+              </span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+              Educação & Certificados Técnicos
+            </h3>
+            <p class="text-sm sm:text-base text-muted-foreground max-w-2xl leading-relaxed">
+              Formações intensivas e certificações práticas com foco em tecnologias modernas de mercado.
+            </p>
+          </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            @for (edu of education; track edu.degree) {
-              <div class="p-5 rounded-lg border border-border bg-card/60 space-y-2">
-                <div class="font-semibold text-sm text-foreground">
-                  {{ edu.degree }}
+          <div class="space-y-6">
+            @for (edu of education; track edu.degree; let i = $index) {
+              <div
+                appRevealOnScroll
+                [delay]="i * 100"
+                class="rounded-xl border border-border bg-card p-6 md:p-8 space-y-5 shadow-xs hover:border-foreground/30 transition-all duration-200"
+              >
+                <div class="space-y-4">
+                  <!-- Topo do Card de Educação -->
+                  <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+                    <div class="space-y-1">
+                      <h4 class="text-lg sm:text-xl font-bold tracking-tight text-foreground leading-snug">
+                        {{ edu.degree }}
+                      </h4>
+                      <div class="text-sm font-semibold text-emerald-500">
+                        {{ edu.institution }}
+                      </div>
+                    </div>
+
+                    <span class="font-mono text-xs text-muted-foreground border border-border rounded-md px-2.5 py-1 bg-secondary/30 self-start sm:self-auto shrink-0">
+                      {{ edu.period }}
+                    </span>
+                  </div>
+
+                  <!-- Lista de Destaques / Conquistas -->
+                  @if (edu.highlights) {
+                    <ul class="space-y-2.5 pt-2 border-t border-border/50">
+                      @for (hl of edu.highlights; track hl) {
+                        <li class="text-sm text-muted-foreground flex items-start gap-2.5 leading-relaxed">
+                          <span class="text-emerald-500 font-bold select-none mt-0.5">✓</span>
+                          <span>{{ hl }}</span>
+                        </li>
+                      }
+                    </ul>
+                  }
                 </div>
-                <div class="text-xs text-muted-foreground">
-                  {{ edu.institution }} — <span class="font-mono">{{ edu.period }}</span>
-                </div>
-                @if (edu.highlights) {
-                  <ul class="text-xs text-muted-foreground space-y-1 pt-1">
-                    @for (hl of edu.highlights; track hl) {
-                      <li>• {{ hl }}</li>
-                    }
-                  </ul>
-                }
               </div>
             }
           </div>

@@ -99,11 +99,11 @@ import { ZardSeparatorComponent } from '../separator/separator.component';
 
             <z-separator></z-separator>
 
-            <!-- Seção 2: Decisões de Arquitetura & Stack -->
+            <!-- Seção 2: Decisões de Arquitetura & Implementação -->
             <div class="space-y-3">
               <h4 class="text-sm font-semibold tracking-wide uppercase font-mono text-foreground flex items-center gap-2">
                 <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
-                2. Decisões de Arquitetura & Engenharia
+                2. Decisões de Arquitetura & Implementação
               </h4>
               <ul class="space-y-2 pl-3.5 border-l-2 border-blue-500/30">
                 @for (decision of project()!.architecture.decisions; track decision) {
