@@ -51,9 +51,11 @@ interface FilterOption {
             <div
               appRevealOnScroll
               [class]="
-                project.colSpan === 'large'
-                  ? 'md:col-span-7'
-                  : 'md:col-span-5'
+                project.colSpan === 'full'
+                  ? 'md:col-span-12'
+                  : project.colSpan === 'large'
+                    ? 'md:col-span-7'
+                    : 'md:col-span-5'
               "
               class="group relative flex flex-col justify-between rounded-xl border border-border bg-card p-6 md:p-8 transition-all duration-300 hover:border-foreground/30 hover:shadow-xl"
             >

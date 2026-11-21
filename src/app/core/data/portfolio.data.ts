@@ -150,7 +150,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     colSpan: 'large',
     summary: 'Solução técnica de engenharia com scripts automatizados em Shell e patches de compatibilidade Wine para execução estável do software Intelbras SIM Next no Linux.',
     metrics: [
-      { label: 'Compatibilidade', value: 'Linux Mint / Ubuntu' },
+      { label: 'Compatibilidade', value: 'Fedora / Ubuntu' },
       { label: 'Automação', value: '100% Shell Script' },
       { label: 'Estabilidade', value: 'Monitoramento CFTV' },
     ],
@@ -176,6 +176,43 @@ export const PORTFOLIO_PROJECTS: Project[] = [
       github: 'https://github.com/llucasgomes/intelbras-simnext-linux',
     },
   },
+  {
+    id: 'smart-water-tank-esp32',
+    title: 'Monitor & Automação de Caixa d\'Água IoT (Android & ESP32)',
+    category: 'iot-sistemas',
+    categoryLabel: 'Mobile & IoT / Embarcados',
+    featured: true,
+    colSpan: 'full',
+    summary: 'Aplicativo mobile Android desenvolvido em Angular e Capacitor para monitoramento em tempo real do nível de reservatório e acionamento automatizado de bomba via ESP32, relé e sensor ultrassônico blindado JSN-SR04T.',
+    metrics: [
+      { label: 'Hardware IoT', value: 'ESP32 + JSN-SR04T' },
+      { label: 'Mobile Engine', value: 'Capacitor + Angular' },
+      { label: 'Finalidade', value: 'P&D / Conhecimento' },
+    ],
+    stack: ['Angular', 'TypeScript', 'Capacitor', 'Android', 'ESP32 (C++)', 'Sensor JSN-SR04T', 'Módulo Relé', 'Automação Residencial'],
+    architecture: {
+      problem: 'Projeto concebido para fins de estudo e validação técnica de engenharia: construir um sistema robusto de ponta a ponta capaz de aferir com precisão milimétrica o volume de uma caixa d\'água residencial e automatizar o acionamento da bomba d\'água via relé, superando a vulnerabilidade a umidade e vapores de sensores convencionais.',
+      decisions: [
+        'Adoção do sensor ultrassônico impermeável industrial JSN-SR04T acoplado ao microcontrolador ESP32, imune à condensação e vapores presentes no interior do reservatório.',
+        'Desenvolvimento de firmware em C++ no ESP32 com rotinas de segurança (fail-safe) e debounce para acionamento do relé, garantindo desligamento automático para evitar transbordamento ou funcionamento a seco da motobomba mesmo sem conexão de rede.',
+        'Construção do aplicativo mobile multiplataforma Android com Angular e Capacitor, aproveitando a reatividade de componentes modernos para gerar um APK nativo veloz e leve.',
+        'Criação de dashboard visual de telemetria com indicador em tempo real da volumetria, histórico de níveis e controle manual/automático da bomba.',
+      ],
+      techImpact: [
+        'Validação prática de integração de sistemas complexos: união de desenvolvimento de front-end mobile moderno (Angular/Capacitor) com microcontroladores de baixo nível e sensores de campo.',
+        'Solução de alta durabilidade e confiabilidade comprovada na prática, eliminando a queima prematura de sensores de umidade convencionais.',
+      ],
+      systemHighlights: [
+        'App nativo Android gerado via Capacitor',
+        'Sensor ultrassônico blindado à prova d\'água (JSN-SR04T)',
+        'Controle de relé com rotinas fail-safe no firmware',
+        'Telemetria e controle em tempo real via Angular',
+      ],
+    },
+    links: {
+      github: 'https://github.com/llucasgomes',
+    },
+  },
 ];
 
 export const PORTFOLIO_STACK: StackCategory[] = [
@@ -188,7 +225,7 @@ export const PORTFOLIO_STACK: StackCategory[] = [
       { name: 'TypeScript & JavaScript', highlight: true, tags: ['Tipagem Estrita', 'ES6+', 'Generics', 'Clean Code'] },
       { name: 'Tailwind CSS & Estilização', highlight: true, tags: ['Design Tokens', 'Micro-animações', 'Responsividade'] },
       { name: 'Angular (20+ / 22+)', highlight: true, tags: ['Signals', 'Standalone', 'ZardUI', 'Tailwind v4'] },
-      { name: 'Mobile (Capacitor / Ionic)', tags: ['Cross-Platform', 'APIs Nativas', 'Android'] },
+      { name: 'Mobile (Capacitor & Angular)', highlight: true, tags: ['Android APK', 'Cross-Platform', 'APIs Nativas', 'Hardware'] },
       { name: 'Desktop (Tauri & Rust)', tags: ['Tauri Apps', 'React Desktop', 'FSDB'] },
     ],
   },
@@ -222,6 +259,7 @@ export const PORTFOLIO_STACK: StackCategory[] = [
       { name: 'Suporte de TI & Infraestrutura', highlight: true, tags: ['Hardware', 'Redes Locais', 'Operação de TI'] },
       { name: 'Git & GitHub Workflows', highlight: true, tags: ['Versionamento', 'Branches', 'Code Review', 'CI/CD'] },
       { name: 'Linux & Shell Scripting', highlight: true, tags: ['Bash Scripting', 'Wine', 'Linux Mint/Ubuntu', 'Automação'] },
+      { name: 'IoT & Sistemas Embarcados', highlight: true, tags: ['ESP32 (C++)', 'Sensor JSN-SR04T', 'Módulo Relé', 'Automação'] },
       { name: 'Docker & Containerização', tags: ['Dockerfiles', 'Ambientes Isolados', 'Containers'] },
     ],
   },
