@@ -55,7 +55,9 @@ interface FilterOption {
                   ? 'md:col-span-12'
                   : project.colSpan === 'large'
                     ? 'md:col-span-7'
-                    : 'md:col-span-5'
+                    : project.colSpan === 'small'
+                      ? 'md:col-span-4'
+                      : 'md:col-span-5'
               "
               class="group relative flex flex-col justify-between rounded-xl border border-border bg-card p-6 md:p-8 transition-all duration-300 hover:border-foreground/30 hover:shadow-xl"
             >
@@ -81,13 +83,13 @@ interface FilterOption {
                 </p>
 
                 <!-- Destaques de Métricas de Impacto -->
-                <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 p-3 rounded-lg bg-secondary/40 border border-border/50">
+                <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 p-3 rounded-lg bg-secondary/40 border border-border/50">
                   @for (metric of project.metrics; track metric.label) {
-                    <div>
-                      <div class="font-mono text-sm sm:text-base font-bold text-amber-500 dark:text-amber-400">
+                    <div class="min-w-0">
+                      <div class="font-mono text-sm sm:text-base font-bold text-amber-500 dark:text-amber-400 truncate">
                         {{ metric.value }}
                       </div>
-                      <div class="text-[11px] text-muted-foreground">
+                      <div class="text-[10px] sm:text-[11px] text-muted-foreground truncate">
                         {{ metric.label }}
                       </div>
                     </div>

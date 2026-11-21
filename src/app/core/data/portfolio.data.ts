@@ -178,41 +178,6 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     },
   },
   {
-    id: 'intelbras-simnext-linux',
-    title: 'Intelbras SIM Next para Linux (Wine & Shell)',
-    category: 'iot-sistemas',
-    categoryLabel: 'Linux & Sistemas',
-    featured: false,
-    colSpan: 'medium',
-    summary: 'Solução técnica de engenharia com scripts automatizados em Shell e patches de compatibilidade Wine para execução estável do software Intelbras SIM Next no Linux.',
-    metrics: [
-      { label: 'Compatibilidade', value: 'Fedora / Ubuntu' },
-      { label: 'Automação', value: '100% Shell Script' },
-      { label: 'Estabilidade', value: 'Monitoramento CFTV' },
-    ],
-    stack: ['Shell Script (Bash)', 'Linux', 'Wine', 'Intelbras SIM Next', 'CFTV', 'Automação'],
-    architecture: {
-      problem: 'O software oficial de monitoramento de câmeras e CFTV Intelbras SIM Next é exclusivamente projetado para Windows, criando entraves em ambientes operacionais rodando Linux.',
-      decisions: [
-        'Desenvolvimento de script de instalação automatizada que configura o prefixo Wine com todas as DLLs e dependências nativas necessárias.',
-        'Correção de falhas de renderização de vídeo e travamentos de interface através de parâmetros específicos de kernel e drivers gráficos.',
-        'Criação de lançador desktop com verificação automática de integridade na inicialização.',
-      ],
-      techImpact: [
-        'Permitiu a estações operacionais com Linux monitorar sistemas de CFTV sem necessidade de licenças adicionais de Windows.',
-        'Documentação passo a passo utilizada pela comunidade de administradores de sistemas e operadores de TI.',
-      ],
-      systemHighlights: [
-        'Script de configuração one-click',
-        'Tratamento de dependências de vídeo Wine',
-        'Automação de rotinas no sistema operacional',
-      ],
-    },
-    links: {
-      github: 'https://github.com/llucasgomes/intelbras-simnext-linux',
-    },
-  },
-  {
     id: 'smart-water-tank-esp32',
     title: 'Monitor & Automação de Caixa d\'Água IoT (Android & ESP32)',
     category: 'iot-sistemas',
@@ -249,6 +214,183 @@ export const PORTFOLIO_PROJECTS: Project[] = [
       github: 'https://github.com/llucasgomes',
     },
   },
+  {
+    id: 'intelbras-simnext-linux',
+    title: 'Intelbras SIM Next para Linux (Wine & Shell)',
+    category: 'iot-sistemas',
+    categoryLabel: 'Linux & Sistemas',
+    featured: false,
+    colSpan: 'medium',
+    summary: 'Solução técnica de engenharia com scripts automatizados em Shell e patches de compatibilidade Wine para execução estável do software Intelbras SIM Next no Linux.',
+    metrics: [
+      { label: 'Compatibilidade', value: 'Fedora / Ubuntu' },
+      { label: 'Automação', value: '100% Shell Script' },
+      { label: 'Estabilidade', value: 'Monitoramento CFTV' },
+    ],
+    stack: ['Shell Script (Bash)', 'Linux', 'Wine', 'Intelbras SIM Next', 'CFTV', 'Automação'],
+    architecture: {
+      problem: 'O software oficial de monitoramento de câmeras e CFTV Intelbras SIM Next é exclusivamente projetado para Windows, criando entraves em ambientes operacionais rodando Linux.',
+      decisions: [
+        'Desenvolvimento de script de instalação automatizada que configura o prefixo Wine com todas as DLLs e dependências nativas necessárias.',
+        'Correção de falhas de renderização de vídeo e travamentos de interface através de parâmetros específicos de kernel e drivers gráficos.',
+        'Criação de lançador desktop com verificação automática de integridade na inicialização.',
+      ],
+      techImpact: [
+        'Permitiu a estações operacionais com Linux monitorar sistemas de CFTV sem necessidade de licenças adicionais de Windows.',
+        'Documentação passo a passo utilizada pela comunidade de administradores de sistemas e operadores de TI.',
+      ],
+      systemHighlights: [
+        'Script de configuração one-click',
+        'Tratamento de dependências de vídeo Wine',
+        'Automação de rotinas no sistema operacional',
+      ],
+    },
+    links: {
+      github: 'https://github.com/llucasgomes/intelbras-simnext-linux',
+    },
+  },
+  {
+    id: 'fsdbchat',
+    title: 'FSDB Chat — Aplicativo Desktop com Tauri & Rust',
+    category: 'fullstack-mobile',
+    categoryLabel: 'Desktop & Sistemas',
+    featured: false,
+    colSpan: 'medium',
+    summary: 'Aplicativo de chat desktop de alta performance construído com Tauri, Rust e React/TypeScript, utilizando o sistema de arquivos (FSDB) como motor de persistência.',
+    metrics: [
+      { label: 'Consumo de RAM', value: '< 30 MB' },
+      { label: 'Persistência', value: 'Zero SQL / FSDB' },
+      { label: 'Engine Nativa', value: 'Rust + Tauri' },
+    ],
+    stack: ['Tauri', 'Rust', 'React.js', 'TypeScript', 'Tailwind CSS', 'FSDB Storage'],
+    architecture: {
+      problem: 'Aplicativos desktop tradicionais em Electron consomem centenas de megabytes de RAM e exigem bancos de dados complexos mesmo para operações locais simples.',
+      decisions: [
+        'Adoção do Tauri com core em Rust para criar um binário ultraleve, seguro e com footprint mínimo de memória.',
+        'Desenvolvimento de motor de persistência baseado em arquivos (FSDB) para leitura e escrita atômica e veloz.',
+        'Interface rica e responsiva em React com TypeScript comunicando-se via IPC com o backend nativo em Rust.',
+      ],
+      techImpact: [
+        'Redução de mais de 85% no consumo de memória em relação a apps desktop baseados em Electron.',
+        'Inicialização quase instantânea e armazenamento portátil de dados.',
+      ],
+      systemHighlights: [
+        'Core nativo compilado em Rust',
+        'Bridge IPC bidirecional com React',
+        'Persistência atômica no file system',
+      ],
+    },
+    links: {
+      github: 'https://github.com/llucasgomes/fsdbchat',
+    },
+  },
+  {
+    id: 'api-openai-elysia',
+    title: 'Microserviço AI com Bun & ElysiaJS',
+    category: 'web-apps',
+    categoryLabel: 'APIs & Inteligência Artificial',
+    featured: false,
+    colSpan: 'small',
+    summary: 'Microserviço de alto desempenho desenvolvido com Bun e ElysiaJS integrado com a OpenAI API para streaming de tokens em tempo real e geração de respostas.',
+    metrics: [
+      { label: 'Runtime', value: 'Bun + Elysia' },
+      { label: 'Rendimento', value: '3x Node.js' },
+      { label: 'Streaming', value: 'Server-Sent' },
+    ],
+    stack: ['Bun', 'ElysiaJS', 'TypeScript', 'OpenAI API', 'REST'],
+    architecture: {
+      problem: 'Aplicações tradicionais em Node.js enfrentam gargalos de I/O e maior consumo de memória ao lidar com dezenas de conexões concorrentes de streaming de LLMs.',
+      decisions: [
+        'Utilização do Bun Runtime combinado ao micro-framework ElysiaJS para máxima eficiência de requisições HTTP por segundo.',
+        'Implementação de endpoints com SSE (Server-Sent Events) para entrega instantânea de tokens gerados pela OpenAI.',
+        'Tipagem e validação estrita com TypeScript de payloads e respostas.',
+      ],
+      techImpact: [
+        'Redução significativa na latência do primeiro token e baixo consumo de recursos.',
+        'Arquitetura desacoplada e pronta para consumo por clientes web e mobile.',
+      ],
+      systemHighlights: [
+        'Runtime ultrarrápido em Bun',
+        'Streaming de tokens OpenAI em tempo real',
+        'Endpoints desacoplados e tipados',
+      ],
+    },
+    links: {
+      github: 'https://github.com/llucasgomes/API-OpenAI-ElysiaJS',
+    },
+  },
+  {
+    id: 'cashflow-stripe',
+    title: 'CashFlow — Gestão Financeira & Stripe',
+    category: 'web-apps',
+    categoryLabel: 'Fintech & Pagamentos',
+    featured: false,
+    colSpan: 'small',
+    summary: 'Plataforma de controle financeiro pessoal e corporativo com integração de gateway Stripe, conciliação e tratamento seguro de webhooks.',
+    metrics: [
+      { label: 'Gateway', value: 'Stripe API' },
+      { label: 'Segurança', value: 'Webhooks HMAC' },
+      { label: 'Banco', value: 'PostgreSQL' },
+    ],
+    stack: ['TypeScript', 'Node.js', 'Stripe', 'PostgreSQL', 'Tailwind CSS'],
+    architecture: {
+      problem: 'A complexidade no gerenciamento de faturas, assinaturas recorrentes e confirmação assíncrona de pagamentos exige tolerância a falhas na comunicação com operadoras.',
+      decisions: [
+        'Integração direta com o Stripe Checkout e Customer Portal para gerenciamento simplificado do ciclo de vida de clientes.',
+        'Criação de fila de processamento resiliente de Webhooks com validação criptográfica de assinatura (HMAC).',
+        'Modelagem relacional em PostgreSQL para trilha de auditoria completa de receitas e despesas.',
+      ],
+      techImpact: [
+        'Garantia de consistência transacional sem risco de perda de eventos de pagamento.',
+        'Painel intuitivo de métricas de fluxo de caixa e faturamento recorrente.',
+      ],
+      systemHighlights: [
+        'Webhooks com validação criptográfica',
+        'Modelagem relacional em PostgreSQL',
+        'Painel reativo de fluxo de caixa',
+      ],
+    },
+    links: {
+      github: 'https://github.com/llucasgomes/back-api-stripe',
+    },
+  },
+  {
+    id: 'scraping-automacao',
+    title: 'Crawler Autônomo & Web Scraping',
+    category: 'iot-sistemas',
+    categoryLabel: 'Automação & Dados',
+    featured: false,
+    colSpan: 'small',
+    summary: 'Robô crawler em TypeScript utilizando Puppeteer headless para extração automatizada, higienização e estruturação em lote de dados públicos.',
+    metrics: [
+      { label: 'Engine', value: 'Puppeteer Headless' },
+      { label: 'Modo', value: 'Batch Assíncrono' },
+      { label: 'Formato', value: 'JSON / CSV' },
+    ],
+    stack: ['TypeScript', 'Node.js', 'Puppeteer', 'Automação', 'Clean Code'],
+    architecture: {
+      problem: 'Coleta manual de dados públicos em portais governamentais e corporativos é morosa, suscetível a erros humanos e bloqueios de requisição rápida.',
+      decisions: [
+        'Desenvolvimento de crawler autônomo com Puppeteer simulando interações humanas para superar verificações de páginas estáticas e SPAs.',
+        'Implementação de rotinas de retry com backoff exponencial e rotação de user-agents para evitar rate limiting.',
+        'Pipelines de sanitização e persistência estruturada de dados prontos para análise.',
+      ],
+      techImpact: [
+        'Economia de horas de trabalho manual na extração de relatórios e certidões.',
+        'Taxa de sucesso superior a 99% na coleta automatizada contínua.',
+      ],
+      systemHighlights: [
+        'Navegação headless autônoma via Puppeteer',
+        'Sanitização automática de dados',
+        'Exportação direta para JSON e CSV',
+      ],
+    },
+    links: {
+      github: 'https://github.com/llucasgomes/api-scpraping-tjgo',
+    },
+  },
+
+
 ];
 
 export const PORTFOLIO_STACK: StackCategory[] = [
