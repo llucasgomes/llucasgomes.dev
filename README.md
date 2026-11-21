@@ -154,6 +154,7 @@ src/
 
 ## 💼 Experiência & Projetos em Destaque
 
+- **Gerador de Certificados ASLAN (Web & Tauri)**: Sistema corporativo desenvolvido com Angular 20+, ZardUI e Tauri (Rust) para emissão automatizada e padronizada de certificados por níveis e cursos, substituindo processos manuais em Word com executáveis leves para Windows e Linux.
 - **Monitor & Automação de Caixa d'Água IoT**: App mobile Android em Angular + Capacitor integrado a ESP32, módulo relé e sensor ultrassônico blindado JSN-SR04T para telemetria de nível de água e acionamento automatizado de bomba d'água.
 - **Domus Petra**: Plataforma interativa de alta performance desenvolvida para o Hackathon StackX (24 Stars no GitHub, 98/100 Lighthouse).
 - **Jornada PIM**: Sistema web corporativo focado em triagem e gestão de ideias de inovação para fábricas do Polo Industrial de Manaus.

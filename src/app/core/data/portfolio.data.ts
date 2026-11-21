@@ -107,6 +107,42 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     },
   },
   {
+    id: 'aslan-certificados',
+    title: 'Gerador de Certificados ASLAN (Web & Desktop Tauri)',
+    category: 'web-apps',
+    categoryLabel: 'Web & Desktop (Tauri)',
+    featured: true,
+    colSpan: 'large',
+    summary: 'Sistema corporativo desenvolvido com Angular 20+, ZardUI e Tauri (Rust) para emissão automatizada e padronizada de certificados por níveis e cursos, substituindo processos manuais em Word com executáveis nativos para Windows e Linux.',
+    metrics: [
+      { label: 'Agilidade Operacional', value: '-95% no tempo' },
+      { label: 'Multiplataforma', value: 'Windows & Linux' },
+      { label: 'Arquitetura', value: 'Angular + Tauri' },
+    ],
+    stack: ['Angular', 'TypeScript', 'Tauri (Rust)', 'ZardUI', 'Tailwind CSS', 'Impressão & PDF', 'Cross-Platform'],
+    architecture: {
+      problem: 'Na rotina da instituição ASLAN Curso de Idiomas, diante de instabilidades no sistema legado ou demandas pontuais, a emissão de certificados precisava ser realizada manualmente através da edição de arquivos Word (.docx) campo a campo. Esse fluxo manual gerava lentidão, risco de erros de digitação, desalinhamentos visuais e inconsistência entre diferentes níveis e tipos de cursos.',
+      decisions: [
+        'Concepção e desenvolvimento de uma aplicação moderna em Angular 20+ com componentes estilizados inspirados no ZardUI e Tailwind CSS, centralizando o preenchimento reativo e regras de validação estritas por categoria de aluno.',
+        'Empacotamento da aplicação com Tauri (Rust), gerando binários executáveis ultraleves (<15 MB) tanto para sistemas Linux quanto para Windows, eliminando a dependência de servidores web locais ou navegadores pesados para os secretários.',
+        'Implementação de layout de certificados com preview em tempo real e renderização para exportação/impressão em alta resolução mantendo rigorosamente a identidade visual corporativa da instituição.',
+      ],
+      techImpact: [
+        'Eliminação do processo manual em Word, reduzindo o tempo de emissão de minutos para segundos com 100% de padronização visual.',
+        'Inovação operacional interna de grande impacto para a equipe pedagógica e de atendimento da empresa.',
+      ],
+      systemHighlights: [
+        'Executáveis nativos para Windows e Linux via Tauri',
+        'Interface moderna em Angular 20+ e ZardUI',
+        'Parametrização por níveis e tipos de certificados',
+        'Preview em tempo real e exportação para impressão',
+      ],
+    },
+    links: {
+      github: 'https://github.com/llucasgomes',
+    },
+  },
+  {
     id: 'fsdbchat',
     title: 'FSDB Chat — Aplicativo Desktop com Tauri & Rust',
     category: 'fullstack-mobile',
@@ -147,7 +183,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     category: 'iot-sistemas',
     categoryLabel: 'Linux & Sistemas',
     featured: false,
-    colSpan: 'large',
+    colSpan: 'medium',
     summary: 'Solução técnica de engenharia com scripts automatizados em Shell e patches de compatibilidade Wine para execução estável do software Intelbras SIM Next no Linux.',
     metrics: [
       { label: 'Compatibilidade', value: 'Fedora / Ubuntu' },
@@ -182,7 +218,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     category: 'iot-sistemas',
     categoryLabel: 'Mobile & IoT / Embarcados',
     featured: true,
-    colSpan: 'full',
+    colSpan: 'large',
     summary: 'Aplicativo mobile Android desenvolvido em Angular e Capacitor para monitoramento em tempo real do nível de reservatório e acionamento automatizado de bomba via ESP32, relé e sensor ultrassônico blindado JSN-SR04T.',
     metrics: [
       { label: 'Hardware IoT', value: 'ESP32 + JSN-SR04T' },
@@ -226,7 +262,7 @@ export const PORTFOLIO_STACK: StackCategory[] = [
       { name: 'Tailwind CSS & Estilização', highlight: true, tags: ['Design Tokens', 'Micro-animações', 'Responsividade'] },
       { name: 'Angular (20+ / 22+)', highlight: true, tags: ['Signals', 'Standalone', 'ZardUI', 'Tailwind v4'] },
       { name: 'Mobile (Capacitor & Angular)', highlight: true, tags: ['Android APK', 'Cross-Platform', 'APIs Nativas', 'Hardware'] },
-      { name: 'Desktop (Tauri & Rust)', tags: ['Tauri Apps', 'React Desktop', 'FSDB'] },
+      { name: 'Desktop (Tauri & Rust)', highlight: true, tags: ['Angular + Tauri', 'Binários Win/Linux', 'FSDB', 'Cross-Platform'] },
     ],
   },
   {
@@ -275,6 +311,7 @@ export const PORTFOLIO_EXPERIENCES: ExperienceItem[] = [
     type: 'Tempo Integral',
     description: 'Atuação na operação de sistemas computacionais, suporte operacional a usuários e manutenção preventiva e corretiva de equipamentos e infraestrutura tecnológica da instituição.',
     achievements: [
+      'Idealização e desenvolvimento do Sistema Gerador de Certificados em Angular 20+ e Tauri, automatizando processos manuais com executáveis para Windows e Linux.',
       'Promoção e transição interna para a equipe de tecnologia após histórico de destaque na instituição.',
       'Suporte direto a colaboradores e docentes garantindo continuidade das operações diárias de informática.',
       'Resolução ágil de chamados técnicos de software, rede local e sistemas internos.',
