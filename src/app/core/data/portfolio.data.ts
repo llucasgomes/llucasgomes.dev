@@ -106,42 +106,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
       github: 'https://github.com/llucasgomes/jornada-pim',
     },
   },
-  {
-    id: 'aslan-certificados',
-    title: 'Gerador de Certificados ASLAN (Web & Desktop Tauri)',
-    category: 'web-apps',
-    categoryLabel: 'Web & Desktop (Tauri)',
-    featured: true,
-    colSpan: 'large',
-    summary: 'Sistema corporativo desenvolvido com Angular 20+, ZardUI e Tauri (Rust) para emissão automatizada e padronizada de certificados por níveis e cursos, substituindo processos manuais em Word com executáveis nativos para Windows e Linux.',
-    metrics: [
-      { label: 'Agilidade Operacional', value: '-95% no tempo' },
-      { label: 'Multiplataforma', value: 'Windows & Linux' },
-      { label: 'Arquitetura', value: 'Angular + Tauri' },
-    ],
-    stack: ['Angular', 'TypeScript', 'Tauri (Rust)', 'ZardUI', 'Tailwind CSS', 'Impressão & PDF', 'Cross-Platform'],
-    architecture: {
-      problem: 'Na rotina da instituição ASLAN Curso de Idiomas, diante de instabilidades no sistema legado ou demandas pontuais, a emissão de certificados precisava ser realizada manualmente através da edição de arquivos Word (.docx) campo a campo. Esse fluxo manual gerava lentidão, risco de erros de digitação, desalinhamentos visuais e inconsistência entre diferentes níveis e tipos de cursos.',
-      decisions: [
-        'Concepção e desenvolvimento de uma aplicação moderna em Angular 20+ com componentes estilizados inspirados no ZardUI e Tailwind CSS, centralizando o preenchimento reativo e regras de validação estritas por categoria de aluno.',
-        'Empacotamento da aplicação com Tauri (Rust), gerando binários executáveis ultraleves (<15 MB) tanto para sistemas Linux quanto para Windows, eliminando a dependência de servidores web locais ou navegadores pesados para os secretários.',
-        'Implementação de layout de certificados com preview em tempo real e renderização para exportação/impressão em alta resolução mantendo rigorosamente a identidade visual corporativa da instituição.',
-      ],
-      techImpact: [
-        'Eliminação do processo manual em Word, reduzindo o tempo de emissão de minutos para segundos com 100% de padronização visual.',
-        'Inovação operacional interna de grande impacto para a equipe pedagógica e de atendimento da empresa.',
-      ],
-      systemHighlights: [
-        'Executáveis nativos para Windows e Linux via Tauri',
-        'Interface moderna em Angular 20+ e ZardUI',
-        'Parametrização por níveis e tipos de certificados',
-        'Preview em tempo real e exportação para impressão',
-      ],
-    },
-    links: {
-      github: 'https://github.com/llucasgomes',
-    },
-  },
+
   {
     id: 'fsdbchat',
     title: 'FSDB Chat — Aplicativo Desktop com Tauri & Rust',
@@ -175,6 +140,42 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     },
     links: {
       github: 'https://github.com/llucasgomes/fsdbchat',
+    },
+  },
+  {
+    id: 'aslan-certificados',
+    title: 'Gerador de Certificados ASLAN ',
+    category: 'web-apps',
+    categoryLabel: 'Web & Desktop (Tauri)',
+    featured: true,
+    colSpan: 'large',
+    summary: 'Sistema corporativo desenvolvido com Angular 20+, ZardUI e Tauri (Rust) para emissão automatizada e padronizada de certificados por níveis e cursos, substituindo processos manuais em Word com executáveis nativos para Windows e Linux.',
+    metrics: [
+      { label: 'Agilidade Operacional', value: '-95% no tempo' },
+      { label: 'Multiplataforma', value: 'Windows & Linux' },
+      { label: 'Arquitetura', value: 'Angular + Tauri' },
+    ],
+    stack: ['Angular', 'TypeScript', 'Tauri (Rust)', 'ZardUI', 'Tailwind CSS', 'Impressão & PDF', 'Cross-Platform'],
+    architecture: {
+      problem: 'Na rotina da instituição ASLAN Curso de Idiomas, diante de instabilidades no sistema legado ou demandas pontuais, a emissão de certificados precisava ser realizada manualmente através da edição de arquivos Word (.docx) campo a campo. Esse fluxo manual gerava lentidão, risco de erros de digitação, desalinhamentos visuais e inconsistência entre diferentes níveis e tipos de cursos.',
+      decisions: [
+        'Concepção e desenvolvimento de uma aplicação moderna em Angular 20+ com componentes estilizados inspirados no ZardUI e Tailwind CSS, centralizando o preenchimento reativo e regras de validação estritas por categoria de aluno.',
+        'Empacotamento da aplicação com Tauri (Rust), gerando binários executáveis ultraleves (<15 MB) tanto para sistemas Linux quanto para Windows, eliminando a dependência de servidores web locais ou navegadores pesados para os secretários.',
+        'Implementação de layout de certificados com preview em tempo real e renderização para exportação/impressão em alta resolução mantendo rigorosamente a identidade visual corporativa da instituição.',
+      ],
+      techImpact: [
+        'Eliminação do processo manual em Word, reduzindo o tempo de emissão de minutos para segundos com 100% de padronização visual.',
+        'Inovação operacional interna de grande impacto para a equipe pedagógica e de atendimento da empresa.',
+      ],
+      systemHighlights: [
+        'Executáveis nativos para Windows e Linux via Tauri',
+        'Interface moderna em Angular 20+ e ZardUI',
+        'Parametrização por níveis e tipos de certificados',
+        'Preview em tempo real e exportação para impressão',
+      ],
+    },
+    links: {
+      github: 'https://github.com/llucasgomes',
     },
   },
   {
@@ -290,7 +291,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     category: 'web-apps',
     categoryLabel: 'APIs & Inteligência Artificial',
     featured: false,
-    colSpan: 'small',
+    colSpan: 'large',
     summary: 'Microserviço de alto desempenho desenvolvido com Bun e ElysiaJS integrado com a OpenAI API para streaming de tokens em tempo real e geração de respostas.',
     metrics: [
       { label: 'Runtime', value: 'Bun + Elysia' },
@@ -352,6 +353,41 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     },
     links: {
       github: 'https://github.com/llucasgomes/back-api-stripe',
+    },
+  },
+  {
+    id: 'scraping-automacao',
+    title: 'Crawler Autônomo & Web Scraping',
+    category: 'iot-sistemas',
+    categoryLabel: 'Automação & Dados',
+    featured: false,
+    colSpan: 'small',
+    summary: 'Robô crawler em TypeScript utilizando Puppeteer headless para extração automatizada, higienização e estruturação em lote de dados públicos.',
+    metrics: [
+      { label: 'Engine', value: 'Puppeteer Headless' },
+      { label: 'Modo', value: 'Batch Assíncrono' },
+      { label: 'Formato', value: 'JSON / CSV' },
+    ],
+    stack: ['TypeScript', 'Node.js', 'Puppeteer', 'Automação', 'Clean Code'],
+    architecture: {
+      problem: 'Coleta manual de dados públicos em portais governamentais e corporativos é morosa, suscetível a erros humanos e bloqueios de requisição rápida.',
+      decisions: [
+        'Desenvolvimento de crawler autônomo com Puppeteer simulando interações humanas para superar verificações de páginas estáticas e SPAs.',
+        'Implementação de rotinas de retry com backoff exponencial e rotação de user-agents para evitar rate limiting.',
+        'Pipelines de sanitização e persistência estruturada de dados prontos para análise.',
+      ],
+      techImpact: [
+        'Economia de horas de trabalho manual na extração de relatórios e certidões.',
+        'Taxa de sucesso superior a 99% na coleta automatizada contínua.',
+      ],
+      systemHighlights: [
+        'Navegação headless autônoma via Puppeteer',
+        'Sanitização automática de dados',
+        'Exportação direta para JSON e CSV',
+      ],
+    },
+    links: {
+      github: 'https://github.com/llucasgomes/api-scpraping-tjgo',
     },
   },
   {
