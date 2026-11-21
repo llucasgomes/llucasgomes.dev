@@ -6,8 +6,11 @@ import { ZardButtonComponent } from '../button/button.component';
   selector: 'app-navbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ZardButtonComponent],
+  host: {
+    class: 'block',
+  },
   template: `
-    <header class="sticky top-0 z-40 w-full border-b border-border/70 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/70 transition-colors">
+    <header class="fixed top-0 left-0 right-0 z-50 w-full border-b border-border/70 bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 transition-colors shadow-xs">
       <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <!-- Logo Tipográfico -->
         <a

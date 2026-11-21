@@ -29,8 +29,8 @@ import { ContactFooterComponent } from './sections/contact-footer/contact-footer
       <!-- Navbar Fixa com Glassmorphism e Theme Toggle -->
       <app-navbar></app-navbar>
 
-      <!-- Conteúdo Principal -->
-      <main class="flex-1">
+      <!-- Conteúdo Principal com padding compensando o header fixo -->
+      <main class="flex-1 pt-16">
         <app-hero-section></app-hero-section>
         <app-projects-bento (selectProject)="openProjectModal($event)"></app-projects-bento>
         <app-github-repos></app-github-repos>

@@ -3,11 +3,12 @@ import { PORTFOLIO_HERO } from '@/core/data/portfolio.data';
 import { ZardButtonComponent } from '@/shared/components/button/button.component';
 import { ZardBadgeComponent } from '@/shared/components/badge/badge.component';
 import { RevealOnScrollDirective } from '@/shared/directives/reveal-on-scroll.directive';
+import { GithubCalendarComponent } from '@/shared/components/github-calendar/github-calendar.component';
 
 @Component({
   selector: 'app-hero-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ZardButtonComponent, ZardBadgeComponent, RevealOnScrollDirective],
+  imports: [ZardButtonComponent, ZardBadgeComponent, RevealOnScrollDirective, GithubCalendarComponent],
   template: `
     <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 border-b border-border/60">
       <!-- Fundo de grid sutil de linhas hairline -->
@@ -98,6 +99,11 @@ import { RevealOnScrollDirective } from '@/shared/directives/reveal-on-scroll.di
               </div>
             </div>
           }
+        </div>
+
+        <!-- Grid de Atividade do GitHub (Commits Calendar) com a mesma largura -->
+        <div appRevealOnScroll [delay]="350" class="pt-2">
+          <app-github-calendar></app-github-calendar>
         </div>
       </div>
     </section>

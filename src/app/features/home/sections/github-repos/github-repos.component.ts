@@ -15,9 +15,9 @@ import { PORTFOLIO_HERO } from '@/core/data/portfolio.data';
         <!-- Topo da Seção com Header e Ações -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <app-section-header
-            eyebrow="Open Source & Atividade Pública"
+            eyebrow="Open Source & Vitrine Oficial"
             title="Repositórios no GitHub"
-            description="Projetos públicos e ferramentas de código aberto sincronizados em tempo real com proteção contra rate-limit e cache local resiliente."
+            description="Projetos de código aberto selecionados com a tag #portfolio, sincronizados em tempo real com métricas de estrelas, linguagens e commits."
           ></app-section-header>
 
           <!-- Barra de Busca / Filtro e Ação de Sync -->
@@ -133,8 +133,15 @@ import { PORTFOLIO_HERO } from '@/core/data/portfolio.data';
                   <!-- Tópicos / Tags (se houver) -->
                   @if (repo.topics.length > 0) {
                     <div class="flex flex-wrap gap-1 mt-3">
-                      @for (topic of repo.topics.slice(0, 3); track topic) {
-                        <span class="font-mono text-[10px] text-muted-foreground bg-secondary/80 rounded px-1.5 py-0.5">
+                      @for (topic of repo.topics.slice(0, 4); track topic) {
+                        <span
+                          [class]="
+                            topic.toLowerCase() === 'portfolio' || topic.toLowerCase() === 'portifolio'
+                              ? 'text-emerald-500 bg-emerald-500/10 border border-emerald-500/30 font-semibold'
+                              : 'text-muted-foreground bg-secondary/80 border border-border/40'
+                          "
+                          class="font-mono text-[10px] rounded px-1.5 py-0.5"
+                        >
                           #{{ topic }}
                         </span>
                       }
@@ -176,17 +183,26 @@ import { PORTFOLIO_HERO } from '@/core/data/portfolio.data';
             }
           </div>
 
-          <!-- Estado Vazio se Busca não achar nada -->
+          <!-- Estado Vazio se Busca não achar nada ou se não houver repositórios com a tag -->
           @if (filteredRepos().length === 0) {
-            <div class="text-center py-12 border border-dashed border-border rounded-xl p-8 space-y-2">
-              <p class="text-sm font-medium text-foreground">Nenhum repositório encontrado com esse filtro.</p>
-              <button
-                type="button"
-                (click)="clearSearch()"
-                class="text-xs text-emerald-500 hover:underline font-mono"
-              >
-                Limpar busca
-              </button>
+            <div class="text-center py-12 border border-dashed border-border rounded-xl p-8 space-y-3">
+              @if (searchQuery()) {
+                <p class="text-sm font-medium text-foreground">Nenhum repositório com o termo "{{ searchQuery() }}" foi encontrado.</p>
+                <button
+                  type="button"
+                  (click)="clearSearch()"
+                  class="text-xs text-emerald-500 hover:underline font-mono cursor-pointer"
+                >
+                  Limpar busca
+                </button>
+              } @else {
+                <div class="space-y-1.5 max-w-md mx-auto">
+                  <p class="text-sm font-semibold text-foreground">Nenhum repositório com a tag #portfolio</p>
+                  <p class="text-xs text-muted-foreground leading-relaxed">
+                    Para exibir um projeto aqui, acesse seu repositório no GitHub, clique na engrenagem em <strong>About</strong> e adicione o tópico <code class="text-emerald-500 bg-secondary px-1 py-0.5 rounded font-mono">portfolio</code>.
+                  </p>
+                </div>
+              }
             </div>
           }
         }
